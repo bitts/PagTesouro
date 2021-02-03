@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Sistema de " />
+        <meta name="author" content="" />
+        
+        <title>Pagamento de GRU - PagTesouro </title>
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+
+        <style>
+          div.all{ padding: 25px; }
+          .iframe-epag {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 100%;
+            height: 98%;
+          }
+          .page-footer{
+            background-color:#2bbbad;
+          }
+          .img-responsive {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+          html {
+            height: 100%;
+          }
+          body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            padding: 2em;
+          }
+          #content {
+            flex: 1;
+            min-height: 100%;
+          }
+          #footer {
+            position: left; 
+            clear: both; 
+            color: #ffffff; 
+            background-color: rgb(75, 75, 75); 
+            text-align:center; 
+            height: 50px;	 
+            line-height: 50px; 
+            font-size: 80%; 
+          }
+        </style>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <!-- nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">GRU PagTesouro</span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/LogoPagTesouro.png" alt="" /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        </nav-->
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            <!-- About-->
+            <section class="resume-section" id="about">
+                <div class="resume-section-content">
+                    <h1 class="mb-0">GRU <span class="text-primary">PagTesouro</span></h1>
+                    <div class="subheading mb-5">
+                        3º Regimento de Cavalaria de Guarda · Tesouraria - (51) 3320-1244
+                        <a href="mailto:tesouraria@3rcg.eb.mil.br">tesouraria@3rcg.eb.mil.br</a>
+                    </div>
+                    <div align="justify" class="lead mb-3 ">O PagTesouro é um componente de processamento de pagamentos digitais gerido pela Secretaria do Tesouro Nacional (STN), um órgão vinculado ao Ministério da Economia e que tem como missão principal gerenciar as contas públicas de forma eficiente e transparente. No contexto do processo de Gerenciamento das Receitas da União, o componente PagTesouro atua no cenário de recolhimento de receitas de Órgãos e entidades da administração Pública Federal como taxas (custas judiciais, emissão de passaporte, etc.), aluguéis de imóveis públicos, serviços administrativos e educacionais, multas, entre outros, permitindo o pagamento em forma digital, assim como a impressão do boleto de pagamento. O pagamento pode ser feito pelas formas Pix, cartão de crédito e boleto de GRU Simples.</div>
+                    <p>Fonte: <a href="https://pagtesouro.tesouro.gov.br/docs/" target="_blank">clique aqui</a> e saiba mais.</p>
+                </div>
+            </section>
+            
+            <hr class="m-0" />
+            <!-- Experience-->
+            <section class="resume-section" id="gerarGuia">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Gerar guia</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+
+                            <div class="row">
+                                <div class="col-12">                         
+                                        <form class="form-group" id="form_principal">
+                            
+                                          <div class="row">
+                                              <div class="col-md-6">
+                                                  <div class="form-group">
+                                                      <!-- <input id="input_codigoServico" type="text" class="form-control" required> -->
+                                                      <label for="input_codigoServico">Codigo do Servico</label>
+                                                      <select id="input_codigoServico" class="form-control" required>
+                                                        <!-- 
+                                                          Relacionar os serviços que são utilizados pela OM
+                                                        -->
+                                                        <option value="0">Selecione</option>
+                                                        <option value="701">701 - INDENIZAÇÕES</option>
+                                                        <option value="701">701 - INDENIZAÇÕES</option>
+                                                        <option value="701">701 - INDENIZAÇÕES</option>
+                                                      </select>
+                                                  </div> 
+                                              </div> 
+                                              <div class="col-md-6">
+                                                  <div class="form-group">
+                                                    <label for="input_referencia">Refer&ecirc;ncia</label>
+                                                    <input id="input_referencia" type="text" class="form-control" placeholder="Preencher com o Mês (mm) e o Ano (yyyy) sem barras, exemplo '012021'">
+                                                  </div> 
+                                              </div>
+                                          </div> 
+                              
+                                          <div class="row">
+                                              <div class="col-md-6">
+                                                <label for="input_competencia">Compet&ecirc;ncia</label>
+                                                <input id="input_competencia" placeholder="MMAAAA da competência do pagamento, exemplo 012021" type="text" class="form-control" required>
+                                                
+                                              </div>
+                                              <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label for="input_vencimento">Vencimento</label>
+                                                  <input id="input_vencimento" placeholder="DDMMAAAA da data de vencimento do pagamento, exemplo '01012021'" type="text" class="form-control" required>
+                                                </div>                                            
+                                              </div>
+                                          </div>
+                              
+                                          <div class="row">
+                                              <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label for="input_cnpjCpf">CNPJ/CPF</label>
+                                                  <input id="input_cnpjCpf" placeholder="CNPJ ou CPF referente ao pagamento, sem pontos, barras ou traços" type="text" class="form-control" required>
+                                                </div>                                            
+                                              </div>
+                                              <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label for="input_nomeContribuinte">Nome do Contribuinte</label>
+                                                  <input id="input_nomeContribuinte" type="text" placeholder="Nome do contribuinte. Pode ser o nome da empresa" class="form-control" required>
+                                                </div>                                              
+                                              </div>
+                                            </div>
+                              
+                              
+                                            <div class="row">
+                                              <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label for="input_valorPrincipal">Valor Principal </label>
+                                                  <input id="input_valorPrincipal" placeholder="0.00" type="text" class="form-control" required>
+                                                </div>         
+                                              </div>
+                                              <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label for="input_valorDescontos">Valor dos Descontos</label>
+                                                  <input id="input_valorDescontos" placeholder="0.00" type="text" class="form-control">
+                                                </div>                                             
+                                              </div>
+                                            </div>
+                              
+                                            <div class="row">
+                                              <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label for="input_valorOutrasDeducoes">Valor de Outras Dedu&ccedil;&otilde;es</label>
+                                                  <input id="input_valorOutrasDeducoes" placeholder="0.00" type="text" class="form-control">
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label for="input_valorMulta">Valor da Multa</label>
+                                                  <input id="input_valorMulta" placeholder="0.00" type="text" class="form-control">
+                                                </div>
+                                              </div>
+                                            </div>
+                              
+                                          <div class="row">
+                                              <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label for="input_valorJuros">Valor dos Juros</label>
+                                                <input id="input_valorJuros" placeholder="0.00" type="text" class="form-control">
+                                                </div>                                              
+                                              </div>
+                                              <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label for="input_valorOutrosAcrescimos">Valor de Outros Acrescimos</label>
+                                                  <input id="input_valorOutrosAcrescimos" placeholder="0.00" type="text" class="form-control">
+                                                </div>                                             
+                                            </div>
+                                          </div>
+                              
+                                          <div class="row">
+                                              <div class="col-md-12">
+                                                <div class="form-group">
+                                                  <button type="submit" class="btn btn-success btn-lg btn-block">GERAR GRU</button>
+                                                </div>
+                                              </div>
+                                          </div>
+                                       
+                                        </form>
+                                    </div>
+                                    <div id="dialog" title="PagTesouro">
+                                      <iframe class="iframe-epag" src="" scrolling="no"></iframe>
+                                    </div>
+                                    <!--  -->
+                            
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>  
+            
+            
+        </div>
+        <script>
+          $(function() {
+
+            var jPagTesouro = {
+              url : 'pagtesouro.php',
+              init : function(){
+                jPagTesouro.mk_form();
+                jPagTesouro.vl_form();
+                
+              },
+              mk_form : function(){
+                  $('#input_valorPrincipal').maskMoney({ decimal: '.', thousands: '', precision: 2 });
+                  $('#input_valorDescontos').maskMoney({ decimal: '.', thousands: '', precision: 2 });
+                  $('#input_valorOutrasDeducoes').maskMoney({ decimal: '.', thousands: '', precision: 2 });
+                  $('#input_valorMulta').maskMoney({ decimal: '.', thousands: '', precision: 2 });
+                  $('#input_valorOutrosAcrescimos').maskMoney({ decimal: '.', thousands: '', precision: 2 });
+              },
+              vl_form : function(){
+                  $('#form_principal').submit(function(e){
+                    e.preventDefault();
+                    $('input').each(function(index, value) {        
+                      if ( $('#'+ this.id).val() == "") {
+                          $('#'+ this.id).focus();
+                          $('#'+ this.id).val("0");
+                      }
+                    });
+                    jPagTesouro.ac_form();
+                });
+              },
+              ac_form : function(){
+                try{
+                    $.ajax({
+                      url: jPagTesouro.url,
+                      crossDomain: true,
+                      type: "POST",
+                      data: { 
+                          "codigoServico": $('#input_codigoServico').val(),
+                          "referencia": $('#input_referencia').val(),
+                          "competencia": $('#input_competencia').val(),
+                          "vencimento": $('#input_vencimento').val(),
+                          "cnpjCpf": $('#input_cnpjCpf').val(),
+                          "nomeContribuinte": $('#input_nomeContribuinte').val(),
+                          "valorPrincipal": $('#input_valorPrincipal').val(),
+                          "valorDescontos": $('#input_valorDescontos').val(),
+                          "valorOutrasDeducoes": $('#input_valorOutrasDeducoes').val(),
+                          "valorMulta": $('#input_valorMulta').val(),
+                          "valorJuros": $('#input_valorJuros').val(),
+                          "valorOutrosAcrescimos": $('#input_valorOutrosAcrescimos').val(),
+                          "modoNavegacao": $('#input_modoNavegacao').val()
+                      },            
+                      success: function(_resposta){
+                          console.log(_resposta);
+                          //var json = JSON.parse(_resposta);
+                          //alert(_resposta.length); 
+                          $( "#dialog" ).dialog({width: 800,height: 800});
+                          $( ".iframe-epag" ).attr('src',_resposta.proximaUrl);
+                      },
+                      error: function (jqXHR, textStatus, errorThrown) {
+                          if (jqXHR.status = 400){
+                              resposta = jQuery.parseJSON(jqXHR.responseText);
+                              var toastHTML = '<span><br><h7>ERROR: ' + resposta[0].codigo + '</h7><hr>' + resposta[0].descricao + '</span>';
+                              alert(toastHTML);                    
+                          }
+                      }     
+                    });
+                }catch (e) {
+                  alert(e)
+                }
+              }
+
+            };
+
+
+            jPagTesouro.init();
+          }); 
+        </script>
+    </body>
+</html>
