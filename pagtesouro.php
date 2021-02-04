@@ -24,7 +24,7 @@ if(file_exists(INI_FILE)){
  */
 class PagTesouro{
     //url de requisição <cnf doc>
-    private static $urlRequest = URLREQUEST. "/api/gru/solicitacao-pagamento";
+    private static $urlRequest = URLREQUEST. "api/gru/solicitacao-pagamento";
     //Chave de autorização correspondente à OM
     private static $Authorization = AUTHORIZATION;
 
@@ -42,21 +42,25 @@ class PagTesouro{
                 $params['modoNavegacao'] = "2";     
                 $params['urlNotificacao'] = self::$urlRequest;
                 if(DEBUG)print_r($params);
-                $fields = http_build_query($params);
+                //$fields = http_build_query($params);
+                $fields = json_encode($params);
             }
             
-            $headers = array('Authorization :'. self::$Authorization);
-     
             curl_setopt($ch, CURLOPT_URL, self::$urlRequest);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $fields); 
             curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json; charset=utf-8", "Authorization: ". self::$Authorization));
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
                        
             $result = curl_exec($ch);
             if(!$result){ echo "Connection Failure"; }
-            else if(DEBUG)print_r($result);
+            else if(DEBUG){
+                print_r($result);
+                $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            }
         } catch (Exception $e) {
             echo 'O seguinte erro ocorreu ao fazer requisição aos servidores: ' . $e->getMessage();
         } finally {
