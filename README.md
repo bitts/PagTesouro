@@ -6,9 +6,14 @@
 
 ### Author
 [Marcelo Valvassori Bittencourt (bitts)](https://github.com/bitts)
+### Init Project 
+[Júlio César Vieira Malliotti (Malliotti)](https://www.youtube.com/channel/UClmDhLPCpFlLQYe1sns9Dgw)
 
 # About
-Sistema simples para geração de GRU utilizando a API do PagTesouro
+Sistema simples para geração de GRU utilizando a API do PagTesouro. Projeto iniciado por Malliotti, transformado adaptado por Marcelo para utilização de PHP, ocultando assim dados como a url de requisição e a própria chave de autorização de acesso da Organização Militar vinculada. 
+Este sisteminha foi feito as pressas para atender as demandas de varias Organizações Militares e estará em constante melhorias.
+Aqueles interessados em realizar melhorias, fiquem a vontade, este é um projeto aberto e a utilizaçção do Github visa centralizar melhorias para beneficio de todos.
+Procure manter o projeto de forma que os clientes necessitem editar somente o arquivo INI (facilitando assim atualização deste sistema por parte daqueles que o utilizam).
 
 # Versions
 - [03/02/2021] 1.0 - Modificações básicas para funcionamento da API utilizando cURL do PHP, enviado os dados do formulário para classe PHP que trata os dados, inclui as chaves de autorização e URL para realizar as requisições ao PagTesouro.
@@ -17,7 +22,10 @@ Sistema simples para geração de GRU utilizando a API do PagTesouro
 # Uso
 - Adicionar arquivos em um pasta dentro do Joomla;
 - Editar arquivo pagtesouro.ini
-- O arquivo pagtesouro.html é a template do formulário e pode ser modificada para adequar-se melhor a realizadade de onde deseja integrar basta que você mantena
+- O arquivo pagtesouro.html é a template do formulário e pode ser modificada para adequar-se melhor a realizadade de onde deseja integrar o sisteminho
+
+
+Abaixo alguns detalhes do arquivo de configuração
 
 ```
 ; Configurações do sistema
