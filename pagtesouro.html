@@ -226,18 +226,15 @@
           $(function() {
 
             var jPagTesouro = {
+              debug : false,
               url : 'pagtesouro.php',
               init : function(){
-                jPagTesouro.mk_form();
-                jPagTesouro.vl_form();
-                
+                jPagTesouro.fm_form();
+                jPagTesouro.vl_form();                
               },
-              mk_form : function(){
-                  $('#input_valorPrincipal').maskMoney({ decimal: '.', thousands: '', precision: 2 });
-                  $('#input_valorDescontos').maskMoney({ decimal: '.', thousands: '', precision: 2 });
-                  $('#input_valorOutrasDeducoes').maskMoney({ decimal: '.', thousands: '', precision: 2 });
-                  $('#input_valorMulta').maskMoney({ decimal: '.', thousands: '', precision: 2 });
-                  $('#input_valorOutrosAcrescimos').maskMoney({ decimal: '.', thousands: '', precision: 2 });
+              fm_form : function(){
+                  $('#input_valorPrincipal').maskMoney();
+                  $('#input_valorDescontos, #input_valorOutrasDeducoes, #input_valorMulta, #input_valorOutrosAcrescimos').maskMoney({ decimal: '.', thousands: '', precision: 2 });
               },
               vl_form : function(){
                   $('#form_principal').submit(function(e){
@@ -273,7 +270,7 @@
                           "modoNavegacao": $('#input_modoNavegacao').val()
                       },            
                       success: function(_resposta){
-                          console.log(_resposta);
+                          if(jPagTesouro.debug)console.log(_resposta);
                           //var json = JSON.parse(_resposta);
                           //alert(_resposta.length); 
                           $( "#dialog" ).dialog({width: 800,height: 800});
@@ -283,18 +280,16 @@
                           if (jqXHR.status = 400){
                               resposta = jQuery.parseJSON(jqXHR.responseText);
                               var toastHTML = '<span><br><h7>ERROR: ' + resposta[0].codigo + '</h7><hr>' + resposta[0].descricao + '</span>';
-                              alert(toastHTML);                    
+                              if(jPagTesouro.debug)console.log(toastHTML);                    
                           }
                       }     
                     });
                 }catch (e) {
-                  alert(e)
+                  if(jPagTesouro.debug)console.log(e)
                 }
               }
 
             };
-
-
             jPagTesouro.init();
           }); 
         </script>
