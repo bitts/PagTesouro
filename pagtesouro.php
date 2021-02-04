@@ -1,9 +1,11 @@
 <?php
 
-ini_set('display_errors', 1); //ini_set('display_errors', 'On');
-ini_set('display_startup_erros', 1);
-//error_reporting( E_ERROR | E_ERROR | E_NOTICE );
-error_reporting( E_ALL );
+/**
+ * This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ */
 
 DEFINE('INI_FILE', 'pagtesouro.ini');
 
@@ -11,17 +13,19 @@ if(file_exists(INI_FILE)){
     $ini = parse_ini_file(INI_FILE, true);
 
     DEFINE("DEBUG", (isset($ini['pagtesouro']['DEBUG']) && !empty($ini['pagtesouro']['DEBUG'])) ? $ini['pagtesouro']['DEBUG'] : false );
+    
+    if(DEBUG){
+        ini_set('display_errors', 1); //ini_set('display_errors', 'On');
+        ini_set('display_startup_erros', 1);
+        //error_reporting( E_ERROR | E_ERROR | E_NOTICE );
+        error_reporting( E_ALL );
+    }
+    
     DEFINE("AUTHORIZATION", (isset($ini['pagtesouro']['AUTHORIZATION']) && !empty($ini['pagtesouro']['AUTHORIZATION'])) ? $ini['pagtesouro']['AUTHORIZATION'] : false );
-    DEFINE("URLREQUEST", (isset($ini['pagtesouro']['URLREQUEST']) && !empty($ini['pagtesouro']['URLREQUEST'])) ? $ini['pagtesouro']['URLREQUEST'] : "https://valpagtesouro.tesouro.gov.br" );
+    DEFINE("URLREQUEST", (isset($ini['pagtesouro']['DEBUG']) && !empty($ini['pagtesouro']['DEBUG'])) ? "https://pagtesouro.tesouro.gov.br" : "https://valpagtesouro.tesouro.gov.br" );
     
 }else echo "Não foi possivel abrir arquivo de configuração do Sistema";
 
-/**
- * This version may have been modified pursuant
- * to the GNU General Public License, and as distributed it includes or
- * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses.
- */
 class PagTesouro{
     //url de requisição <cnf doc>
     private static $urlRequest = URLREQUEST. "api/gru/solicitacao-pagamento";
@@ -70,6 +74,44 @@ class PagTesouro{
     }
 }
 
+class Template{
+    protected $_file;
+    protected $_data = array();
 
-$obPagto = new PagTesouro();
-$obPagto->gerar($_REQUEST);
+    public function __construct($file = null){
+        $this->_file = $file;
+    }
+
+    public function set($key, $value){
+        $this->_data[$key] = $value;
+        return $this;
+    }
+
+    public function extract($template){
+        foreach($this->_data as $rplc){
+            if (preg_match_all("/{{(.*?)}}/", $template, $m)) {
+                //print_r($m);
+                foreach ($m[1] as $i => $varname) {
+                    $tag = $m[0][$i];
+                    $valor = sprintf('%s', $rplc);
+                    $template = str_replace($tag, $valor, $template);
+                }
+            }
+        }
+        return $template;
+    }
+
+    public function render(){
+        ob_start();
+        include($this->_file);
+        $template = ob_get_contents();
+        ob_get_clean();
+        return $this->extract($template);
+    }
+}
+
+
+if(isset($_REQUEST['datatopagtesouro'])){
+    $obPagto = new PagTesouro();
+    $obPagto->gerar($_REQUEST['datatopagtesouro']);
+}

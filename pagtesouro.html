@@ -71,21 +71,17 @@
         </nav-->
         <!-- Page Content-->
         <div class="container-fluid p-0">
-            <!-- About-->
+
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
                     <h1 class="mb-0">GRU <span class="text-primary">PagTesouro</span></h1>
-                    <!-- div class="subheading mb-5">
-                        3º Regimento de Cavalaria de Guarda · Tesouraria - (51) 3320-1244
-                        <a href="mailto:tesouraria@3rcg.eb.mil.br">tesouraria@3rcg.eb.mil.br</a>
-                    </div -->
                     <div align="justify" class="lead mb-3 ">O PagTesouro é um componente de processamento de pagamentos digitais gerido pela Secretaria do Tesouro Nacional (STN), um órgão vinculado ao Ministério da Economia e que tem como missão principal gerenciar as contas públicas de forma eficiente e transparente. No contexto do processo de Gerenciamento das Receitas da União, o componente PagTesouro atua no cenário de recolhimento de receitas de Órgãos e entidades da administração Pública Federal como taxas (custas judiciais, emissão de passaporte, etc.), aluguéis de imóveis públicos, serviços administrativos e educacionais, multas, entre outros, permitindo o pagamento em forma digital, assim como a impressão do boleto de pagamento. O pagamento pode ser feito pelas formas Pix, cartão de crédito e boleto de GRU Simples.</div>
                     <p>Fonte: <a href="https://pagtesouro.tesouro.gov.br/docs/" target="_blank">clique aqui</a> e saiba mais.</p>
                 </div>
             </section>
             
             <hr class="m-0" />
-            <!-- Experience-->
+
             <section class="resume-section" id="gerarGuia">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Gerar guia</h2>
@@ -99,16 +95,9 @@
                                           <div class="row">
                                               <div class="col-md-6">
                                                   <div class="form-group">
-                                                      <!-- <input id="input_codigoServico" type="text" class="form-control" required> -->
                                                       <label for="input_codigoServico">Codigo do Servico</label>
                                                       <select id="input_codigoServico" class="form-control" required>
-                                                        <!-- 
-                                                          Relacionar os serviços que são utilizados pela OM
-                                                        -->
-                                                        <option value="0">Selecione</option>
-                                                        <option value="701">701 - INDENIZAÇÕES</option>
-                                                        <option value="701">701 - INDENIZAÇÕES</option>
-                                                        <option value="701">701 - INDENIZAÇÕES</option>
+                                                        {{cod_servico}}
                                                       </select>
                                                   </div> 
                                               </div> 
@@ -208,18 +197,13 @@
                                     <div id="dialog" title="PagTesouro">
                                       <iframe class="iframe-epag" src="" scrolling="no"></iframe>
                                     </div>
-                                    <!--  -->
-                            
                                 </div>
                             </div>
 
                         </div>
                     </div>
-
-
                 </div>
             </section>  
-            
             
         </div>
         <script>
@@ -234,17 +218,12 @@
               },
               fm_form : function(){
                   $('#input_valorPrincipal').maskMoney();
-                  $('#input_valorDescontos, #input_valorOutrasDeducoes, #input_valorMulta, #input_valorOutrosAcrescimos').maskMoney({ decimal: '.', thousands: '', precision: 2 });
+                  $('#input_valorDescontos, #input_valorOutrasDeducoes, #input_valorMulta, #input_valorOutrosAcrescimos')
+                    .maskMoney({ decimal: '.', thousands: '', precision: 2 });
               },
               vl_form : function(){
                   $('#form_principal').submit(function(e){
                     e.preventDefault();
-                    $('input').each(function(index, value) {        
-                      if ( $('#'+ this.id).val() == "") {
-                          $('#'+ this.id).focus();
-                          $('#'+ this.id).val("0");
-                      }
-                    });
                     jPagTesouro.ac_form();
                 });
               },
@@ -254,6 +233,7 @@
                       url: jPagTesouro.url,
                       type: "POST",
                       data: { 
+                        datatopagtesouro : { 
                           "codigoServico": $('#input_codigoServico').val(),
                           "referencia": $('#input_referencia').val(),
                           "competencia": $('#input_competencia').val(),
@@ -267,18 +247,21 @@
                           "valorJuros": $('#input_valorJuros').val(),
                           "valorOutrosAcrescimos": $('#input_valorOutrosAcrescimos').val(),
                           "modoNavegacao": $('#input_modoNavegacao').val()
+                        }
                       },            
                       success: function(_resposta){
                           var _rst = JSON.parse(_resposta);
                           if(jPagTesouro.debug)console.log(_rst);
-                          $( "#dialog" ).dialog({width: 800,height: 800});
+                          
                           if(_rst && _rst.length){
                               $.map(_rst, function(obj){
                                 $('#gerarGuia').prepend( $('<div />').addClass('menssage alert alert-danger').text(obj.descricao) );
                               });
                               setTimeout(function(){ $('.menssage').remove() },5000);
+                          }else if(_rst.proximaUrl) {
+                            $( ".iframe-epag" ).attr('src',_rst.proximaUrl);
+                            setTimeout(function(){ $( "#dialog" ).dialog({width: 800,height: 800}); },1000)
                           }
-                          $( ".iframe-epag" ).attr('src',_rst.proximaUrl);
                       },
                       error: function (jqXHR, textStatus, errorThrown) {
                           if (jqXHR.status = 400){
@@ -294,7 +277,9 @@
               }
 
             };
+            
             jPagTesouro.init();
+
           }); 
         </script>
     </body>
