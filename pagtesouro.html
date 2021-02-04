@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="Sistema de " />
-        <meta name="author" content="" />
+        <meta name="author" content="Marcelo Valvassori BITTENCOURT" />
         
         <title>Pagamento de GRU - PagTesouro </title>
         
@@ -85,7 +85,7 @@
             <section class="resume-section" id="gerarGuia">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Gerar guia</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
                         <div class="flex-grow-1">
 
                             <div class="row">
@@ -250,9 +250,18 @@
                         }
                       },            
                       success: function(_resposta){
+                        if(_resposta){
+                          
                           var _rst = JSON.parse(_resposta);
                           if(jPagTesouro.debug)console.log(_rst);
                           
+                          if(_rst.error){
+                            $.map(_rst.error, function(value) {
+                              $('#gerarGuia').prepend( $('<div />').addClass('menssage alert alert-danger').text(value) );
+                            });
+                            setTimeout(function(){ $('.menssage').remove() },5000);
+                          }
+
                           if(_rst && _rst.length){
                               $.map(_rst, function(obj){
                                 $('#gerarGuia').prepend( $('<div />').addClass('menssage alert alert-danger').text(obj.descricao) );
@@ -262,6 +271,7 @@
                             $( ".iframe-epag" ).attr('src',_rst.proximaUrl);
                             setTimeout(function(){ $( "#dialog" ).dialog({width: 800,height: 800}); },1000)
                           }
+                        }
                       },
                       error: function (jqXHR, textStatus, errorThrown) {
                           if (jqXHR.status = 400){

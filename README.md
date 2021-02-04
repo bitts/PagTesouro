@@ -26,11 +26,8 @@ Sistema simples para geração de GRU utilizando a API do PagTesouro
 ;[boolean] Utilizado para debugar sistema exibindos todos os tipos de mensagens e valores de variaveis do sistema
 DEBUG =	false
 
-;[string] Codigo de autenticação fornecido pelo PagTesouro conforme documentação de referencia
+;[string] Codigo de autenticação fornecido pelo PagTesouro conforme documentação de referencia esta logo abaixo é utilizado no ambiente de desenvolvimento do PagTesouro
 AUTHORIZATION = 'Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjAwODYifQ.fY4bWesL85B_vFSOmRUyfrawte-SjSuqKcFQTfyfMQVFKyl6gfJKX63o_wElLkb3MHXl5xmQG9zlQasv5V561uq-R8uV6Gi35iXy36hk6wdc8LyLk-WgVD5TN4fyCCrZ5VH6tuayM7xmZ3fPyPdfJFknCCao48E2skbptEHS-8VUjFKAUObd_oFblDsyc8jC0cYPfX7p8IbO1kdeibqBbu-wpnGczsmoWftMkmS82Y-U9EqcRcY5IN10IcVFg_IJ7Mo5SeH3snfrcOMVP-DMjUH0MefmHUqN0eMGlBbeZK1rHxvRXfB7Ual9PORzyhuTO5kzIYK90EW1sT2qNl4TXA'
-
-;[string] Organização Militar 
-OM = '1º CTA'
 
 ;[String] URL do retorno de mensagem do sistema
 URLREQUEST =   'https://www.1cta.eb.mil.br/pagtesouro/'
