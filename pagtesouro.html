@@ -252,7 +252,6 @@
                 try{
                     $.ajax({
                       url: jPagTesouro.url,
-                      crossDomain: true,
                       type: "POST",
                       data: { 
                           "codigoServico": $('#input_codigoServico').val(),
@@ -270,11 +269,16 @@
                           "modoNavegacao": $('#input_modoNavegacao').val()
                       },            
                       success: function(_resposta){
-                          if(jPagTesouro.debug)console.log(_resposta);
-                          //var json = JSON.parse(_resposta);
-                          //alert(_resposta.length); 
+                          var _rst = JSON.parse(_resposta);
+                          if(jPagTesouro.debug)console.log(_rst);
                           $( "#dialog" ).dialog({width: 800,height: 800});
-                          $( ".iframe-epag" ).attr('src',_resposta.proximaUrl);
+                          if(_rst && _rst.length){
+                              $.map(_rst, function(obj){
+                                $('#gerarGuia').prepend( $('<div />').addClass('menssage alert alert-danger').text(obj.descricao) );
+                              });
+                              setTimeout(function(){ $('.menssage').remove() },5000);
+                          }
+                          $( ".iframe-epag" ).attr('src',_rst.proximaUrl);
                       },
                       error: function (jqXHR, textStatus, errorThrown) {
                           if (jqXHR.status = 400){
