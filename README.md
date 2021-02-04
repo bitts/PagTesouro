@@ -1,7 +1,5 @@
 # PagTesouro
 
-[![GitHub license](https://img.shields.io/apm/l/vim-mode.svg)](LICENSE)
-
 ## Credits
 
 ### Author
@@ -17,6 +15,9 @@ Este sisteminha foi feito as pressas para atender as demandas de varias Organiza
 Aqueles interessados em realizar melhorias, fiquem a vontade, este é um projeto aberto e a utilizaçção do Github visa centralizar melhorias para beneficio de todos.
 
 Procure manter o projeto de forma que os clientes necessitem editar somente o arquivo INI (facilitando assim atualização deste sistema por parte daqueles que o utilizam).
+
+### Documentação de Referência
+https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
 
 # Versions
 - [03/02/2021] 1.0 - Modificações básicas para funcionamento da API utilizando cURL do PHP, enviado os dados do formulário para classe PHP que trata os dados, inclui as chaves de autorização e URL para realizar as requisições ao PagTesouro.
