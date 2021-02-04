@@ -224,6 +224,7 @@
               vl_form : function(){
                   $('#form_principal').submit(function(e){
                     e.preventDefault();
+                    $('.menssage').remove();
                     jPagTesouro.ac_form();
                 });
               },
@@ -251,7 +252,6 @@
                       },            
                       success: function(_resposta){
                         if(_resposta){
-                          
                           var _rst = JSON.parse(_resposta);
                           if(jPagTesouro.debug)console.log(_rst);
                           
@@ -261,15 +261,22 @@
                             });
                             setTimeout(function(){ $('.menssage').remove() },5000);
                           }
-
-                          if(_rst && _rst.length){
-                              $.map(_rst, function(obj){
+                          
+                          if(_rst.curl_result){
+                            var result = JSON.parse(_rst.curl_result);
+                            if(result && result.length){
+                              $.map(result, function(obj){
                                 $('#gerarGuia').prepend( $('<div />').addClass('menssage alert alert-danger').text(obj.descricao) );
                               });
-                              setTimeout(function(){ $('.menssage').remove() },5000);
-                          }else if(_rst.proximaUrl) {
-                            $( ".iframe-epag" ).attr('src',_rst.proximaUrl);
-                            setTimeout(function(){ $( "#dialog" ).dialog({width: 800,height: 800}); },1000)
+                              $('html, body').animate({
+                                  scrollTop: $("#page-top").offset().top
+                              }, 1000);
+                              setTimeout(function(){ $('.menssage').remove() },10000);
+                            }
+                            if(result.proximaUrl) {
+                              $( ".iframe-epag" ).attr('src',result.proximaUrl);
+                              setTimeout(function(){ $( "#dialog" ).dialog({width: 800,height: 800}); },1000)
+                            }
                           }
                         }
                       },

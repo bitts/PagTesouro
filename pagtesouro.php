@@ -1,4 +1,5 @@
 <?php
+
 /*
 # Title: Sisteminha mixuruca de integração ao PagTesouro
 # Description: sistema para geração de GRU do PagTesouro
@@ -36,7 +37,7 @@ if(file_exists(INI_FILE)){
 
 class PagTesouro{
     //url de requisição <cnf doc>
-    private static $urlRequest = URLREQUEST. "api/gru/solicitacao-pagamento";
+    private static $urlRequest = URLREQUEST. "/api/gru/solicitacao-pagamento";
     //Chave de autorização correspondente à OM
     private static $Authorization = AUTHORIZATION;
 
@@ -51,6 +52,7 @@ class PagTesouro{
             if (isset($params)) {    
                 $params['modoNavegacao'] = "2";     
                 $params['urlNotificacao'] = URLRETORNO;
+                $params['urlRequest'] = self::$urlRequest;
                 $fields = json_encode($params);
                 if(DEBUG){
                     $dbg->campos = json_decode($fields);
@@ -69,18 +71,16 @@ class PagTesouro{
                        
             $result = curl_exec($ch);
             if(!$result){ $dbg->error[] = "Falha de conexão com o Servidor do PagTesouro"; }
-            if(DEBUG){
-                $dbg->curl_result = $result;
-                $dbg->curl_statuscode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            }
+            
+            $dbg->curl_result = $result;
+            $dbg->curl_statuscode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         } catch (Exception $e) {
             $dbg->error[] = 'O seguinte erro ocorreu ao fazer requisição aos servidores: ' . $e->getMessage();
         } finally {
             curl_close($ch);
         }
 
-        if(DEBUG)echo json_encode($dbg);
-        else echo $result;
+        echo json_encode($dbg);
     }
 }
 

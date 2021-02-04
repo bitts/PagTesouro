@@ -11,8 +11,11 @@
 
 # About
 Sistema simples para geração de GRU utilizando a API do PagTesouro. Projeto iniciado por Malliotti, transformado adaptado por Marcelo para utilização de PHP, ocultando assim dados como a url de requisição e a própria chave de autorização de acesso da Organização Militar vinculada. 
+
 Este sisteminha foi feito as pressas para atender as demandas de varias Organizações Militares e estará em constante melhorias.
+
 Aqueles interessados em realizar melhorias, fiquem a vontade, este é um projeto aberto e a utilizaçção do Github visa centralizar melhorias para beneficio de todos.
+
 Procure manter o projeto de forma que os clientes necessitem editar somente o arquivo INI (facilitando assim atualização deste sistema por parte daqueles que o utilizam).
 
 # Versions

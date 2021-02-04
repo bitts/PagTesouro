@@ -12,6 +12,7 @@
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
 */
+
 include('pagtesouro.php');
 
 $ini = parse_ini_file('pagtesouro.ini', true);
