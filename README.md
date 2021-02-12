@@ -51,3 +51,8 @@ URLREQUEST =   'https://www.1cta.eb.mil.br/pagtesouro/'
 SERVICO[] =   '701 - INDENIZAÇÕES'
 SERVICO[] =   '702 - INDENIZAÇÕES'
 ```
+
+# Melhorias
+- Adicionar sisteminha como componente do Joomla (https://ntic.ifs.ifsuldeminas.edu.br/wiki-publico/index.php/Criar_uma_p%C3%A1gina_no_Portal_com_um_menu_pr%C3%B3prio_-_Joomla_3)
+
+
