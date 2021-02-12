@@ -27,7 +27,7 @@ https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
 - Adicionar arquivos em um pasta dentro do Joomla;
 - Editar arquivo pagtesouro.ini
 - O arquivo pagtesouro.html é a template do formulário e pode ser modificada para adequar-se melhor a realizadade de onde deseja integrar o sisteminho
-
+- Mudar a flag/váriavel DEBUG para false
 
 Abaixo alguns detalhes do arquivo de configuração
 
