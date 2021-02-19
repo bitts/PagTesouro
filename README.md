@@ -28,6 +28,8 @@ https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
 - Editar arquivo pagtesouro.ini
 - O arquivo pagtesouro.html é a template do formulário e pode ser modificada para adequar-se melhor a realizadade de onde deseja integrar o sisteminho
 - Mudar a flag/váriavel DEBUG para false
+- Sistema só funciona com um Token e os Serviços relacionados a ele
+- Como medida provisória para cada UG, crie uma pasta diferente, ex: /pagtesouro6666 /pagtesouro6667 editando os arquivos pagtesouro.ini setando seus respectivos Tokens e Serviços em cada uma das pastas; direcione o usuário para cada uma das opções através de menus ou links em seu site
 
 Abaixo alguns detalhes do arquivo de configuração
 
@@ -53,6 +55,7 @@ SERVICO[] =   '702 - INDENIZAÇÕES'
 ```
 
 # Melhorias
+- possibilidade de cadastrar diversos token e serviços relacionados a eles em um únic arquivo pagtesouro.ini
 - Adicionar sisteminha como componente do Joomla (https://ntic.ifs.ifsuldeminas.edu.br/wiki-publico/index.php/Criar_uma_p%C3%A1gina_no_Portal_com_um_menu_pr%C3%B3prio_-_Joomla_3)
 
 
