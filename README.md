@@ -69,6 +69,6 @@ $parametros = '[
 ```
 
 # Melhorias
-- Modificar sistema para functionar como um componente do Joomla
+- Modificar sistema para funcionar como um componente do Joomla
 
 
