@@ -13,33 +13,25 @@
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
 */
+DEFINE("DEBUG", false );
 
-DEFINE('INI_FILE', 'pagtesouro.ini');
+if(DEBUG){
+    ini_set('display_errors', 1); 
+    ini_set('display_startup_erros', 1);
+    error_reporting( E_ALL );
+}
+include('pagtesouro.inc');
 
-if(file_exists(INI_FILE)){
-    $ini = parse_ini_file(INI_FILE, true);
 
-    DEFINE("DEBUG", (isset($ini['pagtesouro']['DEBUG']) && !empty($ini['pagtesouro']['DEBUG'])) ? $ini['pagtesouro']['DEBUG'] : false );
-    
-    if(DEBUG){
-        ini_set('display_errors', 1); //ini_set('display_errors', 'On');
-        ini_set('display_startup_erros', 1);
-        error_reporting( E_ALL );
-    }
-    //Se estiver no modo debug utiliza a chave de desenvolvimento
-    DEFINE("AUTHORIZATION", (isset($ini['pagtesouro']['AUTHORIZATION']) && !empty($ini['pagtesouro']['AUTHORIZATION'])) ? $ini['pagtesouro']['AUTHORIZATION'] : 'Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjAwODYifQ.fY4bWesL85B_vFSOmRUyfrawte-SjSuqKcFQTfyfMQVFKyl6gfJKX63o_wElLkb3MHXl5xmQG9zlQasv5V561uq-R8uV6Gi35iXy36hk6wdc8LyLk-WgVD5TN4fyCCrZ5VH6tuayM7xmZ3fPyPdfJFknCCao48E2skbptEHS-8VUjFKAUObd_oFblDsyc8jC0cYPfX7p8IbO1kdeibqBbu-wpnGczsmoWftMkmS82Y-U9EqcRcY5IN10IcVFg_IJ7Mo5SeH3snfrcOMVP-DMjUH0MefmHUqN0eMGlBbeZK1rHxvRXfB7Ual9PORzyhuTO5kzIYK90EW1sT2qNl4TXA' );
-    //se estiver no modo debug utiliza a url de desenvolvimento
-    DEFINE("URLREQUEST", (isset($ini['pagtesouro']['DEBUG']) && !empty($ini['pagtesouro']['DEBUG']) && $ini['pagtesouro']['DEBUG']) ? "https://valpagtesouro.tesouro.gov.br" :"https://pagtesouro.tesouro.gov.br" );
+DEFINE("PARAMETROS", $parametros);
+DEFINE("URLREQUEST", DEBUG ? "https://valpagtesouro.tesouro.gov.br" :"https://pagtesouro.tesouro.gov.br" );
 
-    DEFINE("URLRETORNO", (isset($ini['pagtesouro']['URLRETORNO']) && !empty($ini['pagtesouro']['URLRETORNO']) && $ini['pagtesouro']['URLRETORNO']) ? $ini['pagtesouro']['URLRETORNO'] :"http://localhost/" );
-    
-}else echo "Não foi possivel abrir arquivo de configuração do Sistema";
 
 class PagTesouro{
     //url de requisição <cnf doc>
     private static $urlRequest = URLREQUEST. "/api/gru/solicitacao-pagamento";
-    //Chave de autorização correspondente à OM
-    private static $Authorization = AUTHORIZATION;
+    //Parametros definidos pelo usuario no arquivo pagtesouro.inc
+    private static $Parametros = PARAMETROS;
 
     //faz conexão com servidor do PagTesouro e envia a chave de autorização via cabeçalho/header da requisição, bem como define POST como metodo de envio
     public function gerar($params){
@@ -51,13 +43,27 @@ class PagTesouro{
 
             if (isset($params)) {    
                 $params['modoNavegacao'] = "2";     
-                $params['urlNotificacao'] = URLRETORNO;
+                $params['urlNotificacao'] = 'http://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
                 $params['urlRequest'] = self::$urlRequest;
                 $fields = json_encode($params);
-                if(DEBUG){
-                    $dbg->campos = json_decode($fields);
-                    $dbg->Authorization = self::$Authorization;
-                }
+            
+                $dbg->campos = json_decode($fields);
+
+                $parametros = preg_replace('/\s\s+/', '', self::$Parametros);
+                $parametros = json_decode($parametros, true);
+
+                if(!empty($parametros) && is_array($parametros)){
+                    $enviar = new stdClass();
+                    foreach($parametros as $prm){
+                        foreach($prm['servicos'] as $srv){
+                            if($srv['codigo'] == $dbg->campos->codigoServico){
+                                $enviar->codigoServico = $srv['codigo'];
+                                $enviar->token = $prm['token'];
+                            }
+                        }
+                    }
+                    $dbg->Authorization = $enviar->token;
+                }else throw new Exception("Arquivo pagtesouro.inc em branco ou incompleto, talvez até mesmo mal formatado. Verifique arquivo pagtesouro.inc");
             }
             
             curl_setopt($ch, CURLOPT_URL, self::$urlRequest);
@@ -65,7 +71,7 @@ class PagTesouro{
             curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json; charset=utf-8", "Authorization: ". self::$Authorization));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json; charset=utf-8", "Authorization: ". $dbg->Authorization));
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
                        
@@ -75,7 +81,7 @@ class PagTesouro{
             $dbg->curl_result = $result;
             $dbg->curl_statuscode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         } catch (Exception $e) {
-            $dbg->error[] = 'O seguinte erro ocorreu ao fazer requisição aos servidores: ' . $e->getMessage();
+            $dbg->error[] = $e->getMessage();
         } finally {
             curl_close($ch);
         }

@@ -15,16 +15,23 @@
 
 include('pagtesouro.php');
 
-$ini = parse_ini_file('pagtesouro.ini', true);
-$servicos = $ini['pagtesouro']['SERVICO'];
-$options = "";
-foreach($servicos as $sv){
-    $sv = explode('-', $sv);
-    if(!empty($sv[0]))$codigo = trim(preg_replace('/\s\s+/',' ', $sv[0]));
-    if(!empty($sv[1]))$descricao = trim(preg_replace('/\s\s+/',' ', $sv[1]));
-    if(isset($codigo) && isset($descricao))$options .= "<option value='{$codigo}'>{$descricao}</option>";
-}
-$template = new Template('pagtesouro.html');
-$template->set('cod_servico', $options);
+$parametros = preg_replace('/\s\s+/', '', $parametros);
+$parametros = json_decode($parametros, true);
 
-echo $template->render();
+try{
+    $options = "";
+    if(!empty($parametros) && is_array($parametros)){
+        foreach($parametros as $prm){
+            foreach($prm['servicos'] as $srv){
+                if(isset($srv['codigo']) && isset($srv['descricao']))
+                    $options .= "<option value='{$srv['codigo']}'>{$srv['descricao']}</option>";
+            }
+        }
+        $template = new Template('pagtesouro.html');
+        $template->set('cod_servico', $options);
+
+        echo $template->render();
+    }else throw new Exception("Arquivo pagtesouro.inc em branco ou incompleto, talvez até mesmo mal formatado. Verifique arquivo pagtesouro.inc");
+} catch (Exception $e) {
+    echo 'O seguinte erro ocorreu no sistema: ' . $e->getMessage();
+}
