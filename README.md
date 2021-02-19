@@ -21,41 +21,54 @@ https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
 
 # Versions
 - [03/02/2021] 1.0 - Modificações básicas para funcionamento da API utilizando cURL do PHP, enviado os dados do formulário para classe PHP que trata os dados, inclui as chaves de autorização e URL para realizar as requisições ao PagTesouro.
+- [19/02/2021] 1.1 - Alterado sistema para funcionar com varios Tokens [NÃO TESTADO]
 
 
 # Uso
 - Adicionar arquivos em um pasta dentro do Joomla;
-- Editar arquivo pagtesouro.ini
+- Editar arquivo pagtesouro.INC
 - O arquivo pagtesouro.html é a template do formulário e pode ser modificada para adequar-se melhor a realizadade de onde deseja integrar o sisteminho
-- Mudar a flag/váriavel DEBUG para false
-- Sistema só funciona com um Token e os Serviços relacionados a ele
-- Como medida provisória para cada UG, crie uma pasta diferente, ex: /pagtesouro6666 /pagtesouro6667 editando os arquivos pagtesouro.ini setando seus respectivos Tokens e Serviços em cada uma das pastas; direcione o usuário para cada uma das opções através de menus ou links em seu site
 
-Abaixo alguns detalhes do arquivo de configuração
+
+Abaixo alguns detalhes do NOVO arquivo de configuração (ARQUIVO: pagtesouro.inc)
 
 ```
-; Configurações do sistema
-[pagtesouro]
+/*
+Padrão de arquivo JSON
+*/
 
-;[boolean] Utilizado para debugar sistema exibindos todos os tipos de mensagens e valores de variaveis do sistema
-DEBUG =	false
-
-;[string] Codigo de autenticação fornecido pelo PagTesouro conforme documentação de referencia esta logo abaixo é utilizado no ambiente de desenvolvimento do PagTesouro
-AUTHORIZATION = 'Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjAwODYifQ.fY4bWesL85B_vFSOmRUyfrawte-SjSuqKcFQTfyfMQVFKyl6gfJKX63o_wElLkb3MHXl5xmQG9zlQasv5V561uq-R8uV6Gi35iXy36hk6wdc8LyLk-WgVD5TN4fyCCrZ5VH6tuayM7xmZ3fPyPdfJFknCCao48E2skbptEHS-8VUjFKAUObd_oFblDsyc8jC0cYPfX7p8IbO1kdeibqBbu-wpnGczsmoWftMkmS82Y-U9EqcRcY5IN10IcVFg_IJ7Mo5SeH3snfrcOMVP-DMjUH0MefmHUqN0eMGlBbeZK1rHxvRXfB7Ual9PORzyhuTO5kzIYK90EW1sT2qNl4TXA'
-
-;[String] URL do retorno de mensagem do sistema
-URLREQUEST =   'https://www.1cta.eb.mil.br/pagtesouro/'
-
-;[array] codigo dos serviços 
-; ** MUITO IMPORTANTE ** cadastrar codigos no padrão:
-; SERVICO[] = 'CODIGONUMERICO - Descrição do Serviço para Usuário compreender'
-; onde: CODIGONUMERICO é um número do tipo inteiro e deve ser seguido de espaço, traço e espaço, seguido da descrição
-SERVICO[] =   '701 - INDENIZAÇÕES'
-SERVICO[] =   '702 - INDENIZAÇÕES'
+$parametros = '[
+    {
+        "token" : "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjAwODYifQ.fY4bWesL85B_vFSOmRUyfrawte-SjSuqKcFQTfyfMQVFKyl6gfJKX63o_wElLkb3MHXl5xmQG9zlQasv5V561uq-R8uV6Gi35iXy36hk6wdc8LyLk-WgVD5TN4fyCCrZ5VH6tuayM7xmZ3fPyPdfJFknCCao48E2skbptEHS-8VUjFKAUObd_oFblDsyc8jC0cYPfX7p8IbO1kdeibqBbu-wpnGczsmoWftMkmS82Y-U9EqcRcY5IN10IcVFg_IJ7Mo5SeH3snfrcOMVP-DMjUH0MefmHUqN0eMGlBbeZK1rHxvRXfB7Ual9PORzyhuTO5kzIYK90EW1sT2qNl4TXA",
+        "servicos" : [
+            {
+                "codigo" : 701,
+                "descricao": "701 - INDENIZAÇÕES"
+            },
+            {
+                "codigo": 702,
+                "descricao" : "702 - INDENIZAÇÕES USO IMOVEIS"
+            }
+        ]
+    },
+    {
+        "token" : "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjAwODYifQ.fY4bWesL85B_vFSOmRUyfrawte-SjSuqKcFQTfyfMQVFKyl6gfJKX63o_wElLkb3MHXl5xmQG9zlQasv5V561uq-R8uV6Gi35iXy36hk6wdc8LyLk-WgVD5TN4fyCCrZ5VH6tuayM7xmZ3fPyPdfJFknCCao48E2skbptEHS-8VUjFKAUObd_oFblDsyc8jC0cYPfX7p8IbO1kdeibqBbu-wpnGczsmoWftMkmS82Y-U9EqcRcY5IN10IcVFg_IJ7Mo5SeH3snfrcOMVP-DMjUH0MefmHUqN0eMGlBbeZK1rHxvRXfB7Ual9PORzyhuTO5kzIYK90EW1sT2qNl4TXA",
+        "servicos" : [
+            {
+                "codigo" : 701,
+                "descricao": "701 - INDENIZAÇÕES"
+            },
+            {
+                "codigo": 702,
+                "descricao" : "702 - INDENIZAÇÕES USO IMOVEIS"
+            }
+        ]
+    }
+    
+]';
 ```
 
 # Melhorias
-- possibilidade de cadastrar diversos token e serviços relacionados a eles em um únic arquivo pagtesouro.ini
-- Adicionar sisteminha como componente do Joomla (https://ntic.ifs.ifsuldeminas.edu.br/wiki-publico/index.php/Criar_uma_p%C3%A1gina_no_Portal_com_um_menu_pr%C3%B3prio_-_Joomla_3)
+- Modificar sistema para functionar como um componente do Joomla
 
 
