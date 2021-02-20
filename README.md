@@ -30,17 +30,14 @@ https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
 - Adicionar arquivos em um pasta dentro do Joomla;
 - Editar arquivo pagtesouro.JSON
 - Criar dentro do Joomla abertura para iframe e apontar para o arquivo index.php
-- O arquivo pagtesouro.html é a template do formulário e pode ser modificada para adequar-se melhor a realidade de onde deseja integrar o sisteminha
+- O arquivo pagtesouro.html é a template do formulário e PODE (não precisa) ser modificada para adequar-se melhor a realidade de onde deseja integrar o sisteminha
 - Evite modificar arquivos como o pagtesouro.php ou o pagtesouro.html, se você realmente não sabe o que esta fazendo
+- A descrição pode ser alterada no arquivo pagtesouro.json para facilitar o uso pelo cliente, no caso de varias UGs você pode editar para "UG 6666-6 | 701 - Indenizações" ao invés de utilizar somente "701 - INDENIZAÇÕES"
 
 
 Abaixo alguns detalhes do NOVO arquivo de configuração (ARQUIVO: pagtesouro.json)
 
 ```
-/*
-Padrão de arquivo JSON
-A descrição pode ser alterada para facilitar o uso pelo cliente, no caso de varias UGs você pode editar para "UG 6666-6 | 701 - Indenizações" ou invés de utilizar somente "701 - INDENIZAÇÕES"
-*/
 [
     {
         "token" : "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjAwODYifQ.fY4bWesL85B_vFSOmRUyfrawte-SjSuqKcFQTfyfMQVFKyl6gfJKX63o_wElLkb3MHXl5xmQG9zlQasv5V561uq-R8uV6Gi35iXy36hk6wdc8LyLk-WgVD5TN4fyCCrZ5VH6tuayM7xmZ3fPyPdfJFknCCao48E2skbptEHS-8VUjFKAUObd_oFblDsyc8jC0cYPfX7p8IbO1kdeibqBbu-wpnGczsmoWftMkmS82Y-U9EqcRcY5IN10IcVFg_IJ7Mo5SeH3snfrcOMVP-DMjUH0MefmHUqN0eMGlBbeZK1rHxvRXfB7Ual9PORzyhuTO5kzIYK90EW1sT2qNl4TXA",
