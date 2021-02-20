@@ -12,13 +12,16 @@
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
 */
-
 include('pagtesouro.php');
 
-$parametros = preg_replace('/\s\s+/', '', $parametros);
-$parametros = json_decode($parametros, true);
-
 try{
+
+    $parametros = "";
+    $file_prm = "pagtesouro.json";
+    if( file_exists($file_prm) ){
+        $parametros = json_decode( file_get_contents($file_prm), true);
+    }else throw new Exception("Arquivo pagtesouro.json em branco, incompleto ou mal formatado. Verifique arquivo pagtesouro.json");
+
     $options = "";
     if(!empty($parametros) && is_array($parametros)){
         foreach($parametros as $prm){
@@ -31,7 +34,8 @@ try{
         $template->set('cod_servico', $options);
 
         echo $template->render();
-    }else throw new Exception("Arquivo pagtesouro.inc em branco ou incompleto, talvez até mesmo mal formatado. Verifique arquivo pagtesouro.inc");
+    }else throw new Exception("Parametros não encontrados");
+    
 } catch (Exception $e) {
     echo 'O seguinte erro ocorreu no sistema: ' . $e->getMessage();
 }

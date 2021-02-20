@@ -262,8 +262,8 @@
                             setTimeout(function(){ $('.menssage').remove() },5000);
                           }
                           
-                          if(_rst.curl_result){
-                            var result = (typeof _rst.curl_result == 'object')?_rst.curl_result:JSON.parse(_rst.curl_result);
+                          if(_rst.result){
+                            var result = (typeof _rst.result == 'object')?_rst.result:JSON.parse(_rst.result);
                             if(result && result.length){
                               $.map(result, function(obj){
                                 $('#gerarGuia').prepend( $('<div />').addClass('menssage alert alert-danger').text(obj.descricao) );
