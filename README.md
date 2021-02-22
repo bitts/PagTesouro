@@ -21,7 +21,7 @@ https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
 # Versions
 - [03/02/2021] 1.0 - Modificações básicas para funcionamento da API utilizando cURL do PHP, enviado os dados do formulário para classe PHP que trata os dados, inclui as chaves de autorização e URL para realizar as requisições ao PagTesouro.
 - [19/02/2021] 1.1 - Alterado sistema para funcionar com vários Tokens
-- [20/02/2021] 1.2 - [TESTADO SOMENTE EM AMBIENTE DE HOMOLOGAÇÃO] - dia 22/02/2021 será realizado testes com token e serviços em produção
+- [20/02/2021] 1.2 - [Validado] Testes com token e serviços em produção
     - [Validado] Alterado para cadastramento dos dados de Tokens e Serviços para o arquivo pagtesouro.json
     - [Validado] Adicionado novas formas de envio dos dados ao PagTesouro (file_get_contents e fopen, além do curl como última alternativa já que em muitos servidores algumas dessas bibliotecas podem não estarem habilitadas por default no PHP)
     - [Não Validado] Adição de arquvio .htaccess com regras básicas para segurança ou para eviar erros de chamada
