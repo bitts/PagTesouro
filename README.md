@@ -68,6 +68,7 @@ Abaixo alguns detalhes do NOVO arquivo de configuração (ARQUIVO: pagtesouro.js
     }   
 ]
 ```
+* Valide o seu arquivo JSON em https://jsonlint.com/
 
 # Melhorias
 - Modificar sistema para funcionar como um componente do Joomla
