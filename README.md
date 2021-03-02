@@ -27,6 +27,17 @@ https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
     - [Não Validado] Adição de arquvio .htaccess com regras básicas para segurança ou para eviar erros de chamada
 - [22/02/2021] 1.3 - [Validado] Funcional para diversos Token
 
+# Primeiros passos antes da implementação
+Siga os passos abaixo para que o sistema esteja funcional:
+
+1 - Gere os Códigos Necessários (Setor Financeiro)
+
+    A - Solicite o Setor Financeiro de sua organização (usuário SIAFI válido) que gere um Token para cada uma das UGs sobre sua gerência, no SISGRU.
+    Aba PagTesouro / Autorização de uso do PagTesouro / inserir o código da UG, o período para utilização e setar situação "ativo".
+    
+    B - Solicite o Setor Financeiro (usuário SIAFI válido) que gere os Códigos de Serviço correspondentes para cada UG., no SISGRU.
+    Aba PagTesouro / Catálago de serviços / Inserir o código da UG, código de recolhimento da GRU e o tipo de serviço. Após isso, selecione Incluir.
+
 # Uso
 - Adicionar arquivos em um pasta dentro do Joomla;
 - Editar arquivo pagtesouro.JSON
