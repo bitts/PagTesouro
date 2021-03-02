@@ -6,7 +6,7 @@ Formulário de integração com API do PagTesouro
 ### Author / Autores
 [Marcelo Valvassori Bittencourt (bitts)](https://github.com/bitts)
 ### Init Project 
-[Júlio César Vieira Malliotti (Malliotti)](https://www.youtube.com/channel/UClmDhLPCpFlLQYe1sns9Dgw)
+[Júlio César Vieira Malliotti (Malliotti)](https://github.com/malliotti)
 
 # About
 Sistema simples para geração de GRU utilizando a API do PagTesouro. Projeto iniciado por Malliotti, transformado adaptado por Marcelo para utilização de PHP, ocultando assim dados como a url de requisição e a própria chave de autorização de acesso da Organização Militar vinculada. 
