@@ -5,8 +5,8 @@
 # Description: sistema para geração de GRU do PagTesouro
 # Author: 2º Ten Marcelo Valvassori BITTENCOURT
 # E-mail: marcelo.valvassori.bittencourt@gmail.com
-# version: 1.0
-# Modificação: 02 FEV 2021
+# version: 1.4
+# Modificação: 12 MAR 2021
 *
 * This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -26,6 +26,10 @@ DEFINE("URLREQUEST", DEBUG ? "https://valpagtesouro.tesouro.gov.br" :"https://pa
 class PagTesouro{
     //url de requisição <cnf doc>
     private static $urlRequest = URLREQUEST. "/api/gru/solicitacao-pagamento";
+    
+    public function __construct() {
+        $this->createLinktoConfig();
+    }
     
     public function createLinktoConfig(){
         $target = "/images/pagtesouro/";
