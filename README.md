@@ -29,6 +29,9 @@ https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
     - [Validado] Adicionado novas formas de envio dos dados ao PagTesouro (file_get_contents e fopen, além do curl como última alternativa já que em muitos servidores algumas dessas bibliotecas podem não estarem habilitadas por default no PHP)
     - [Não Validado] Adição de arquvio .htaccess com regras básicas para segurança ou para eviar erros de chamada
 - [22/02/2021] 1.3 - [Validado] Funcional para diversos Token
+- [12/03/2021] 1.4.1 - [Validado] Funciona como Componente do Joomla "[PagTesouro-1.4.zip](https://github.com/bitts/PagTesouro/releases/download/v1.4.1/PagTesouro-1.4.zip)" 
+- [Veja Documentação de como Instalar no Joomla!](https://github.com/bitts/PagTesouro/wiki/Joomla!-Importando-como-m%C3%B3dulo)
+    
 
 # Primeiros passos antes da implementação
 Siga os passos abaixo para que o sistema esteja funcional:
