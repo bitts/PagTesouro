@@ -26,6 +26,34 @@ DEFINE("URLREQUEST", DEBUG ? "https://valpagtesouro.tesouro.gov.br" :"https://pa
 class PagTesouro{
     //url de requisição <cnf doc>
     private static $urlRequest = URLREQUEST. "/api/gru/solicitacao-pagamento";
+    
+    public function createLinktoConfig(){
+        $target = "/images/pagtesouro/";
+        if(!is_dir($target)){
+            $target = "../images/pagtesouro/";
+            $link = getcwd();
+            $tar = explode('/',$link);
+            unset($tar[count($tar)-1]);
+            unset($tar[count($tar)-1]);
+            $tar = implode('/',$tar);
+            if(!is_dir("{$tar}/images/pagtesouro/")){
+                mkdir("{$tar}/images/pagtesouro/", 0777);
+            }
+            $target = $tar . "/images/pagtesouro/";
+            $link = getcwd()."/";
+
+            $path = "arquivos/";
+            $diretorio = dir($link);
+
+            while( $arquivo = $diretorio->read() ){
+                if( !in_array($arquivo, Array('.','..') )){
+                        if($arquivo === "pagtesouro.json")
+                            @link("{$link}{$arquivo}", "{$target}{$arquivo}");
+                }
+            }
+            $diretorio->close();
+        }
+    }
 
     //faz conexão com servidor do PagTesouro e envia a chave de autorização via cabeçalho/header da requisição, bem como define POST como metodo de envio
     public function gerar($params, $file_prm = 'pagtesouro.json'){
