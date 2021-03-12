@@ -6,7 +6,6 @@
     <description>Módulo de Joomla! para integração com API do PagTesouro</description>
     <files>
         <filename>.htaccess</filename>
-        <filename>.README.md</filename>
         <filename module="mod_pagtesouro">index.php</filename>
         <filename>pagtesouro.html</filename>
         <filename>pagtesouro.json</filename>
