@@ -1,7 +1,7 @@
 # PagTesouro
 Formulário de integração com API do PagTesouro
 
-Versão 2.0 Plugin Joomla!
+[Versão 2.0 Plugin Joomla!](https://github.com/bitts/PagTesouro/wiki/Plugin-Joomla!)
 
 ## Créditos
 
