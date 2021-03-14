@@ -1,7 +1,9 @@
 # PagTesouro
 Formulário de integração com API do PagTesouro
 
-[Versão 2.0 Plugin Joomla!](https://github.com/bitts/PagTesouro/wiki/Plugin-Joomla!)
+[Versão 2.0 - Plugin Joomla!](https://github.com/bitts/PagTesouro/wiki/Plugin-Joomla!)
+
+[Versão 1.4 - Formulário Simples](https://github.com/bitts/PagTesouro/archive/v1.4.zip)
 
 ## Créditos
 
@@ -48,16 +50,17 @@ B - Solicite o Setor Financeiro (usuário SIAFI válido) que gere os Códigos de
 Aba PagTesouro / Catálago de serviços / Inserir o código da UG, código de recolhimento da GRU e o tipo de serviço. Após isso, selecione Incluir.
 
 # Uso para sistema Joomla
-- Acessar painel administrativo do Joomla;
+- Acessar painel administrativo do Joomla
 - Ir no Menu > Extesions > Manager > Install
 - Na opção "Upload Package File" você precisa fazer o download do arquivo da versão [2.0](https://github.com/bitts/PagTesouro/releases/download/v2.0/INSTALADOR.zip) para o seu computador e depois escolher o arquivo para instalação;
 - Na opção "Install from URL" basta você informar a url "https://github.com/bitts/PagTesouro/releases/download/v2.0/INSTALADOR.zip" e clicar em "Check and Install", pronto já estara instalado o plugin Joomla do PagTesouro
 - Vá no Menu "Components" > "PagTesouro", para adicionar ou remover seus Tokens e Serviços
 
 # Uso para hospedagem simples
-- Adicionar arquivos em um pasta dentro do Joomla;
+- Realize o download do sistema na versão [v1.4](https://github.com/bitts/PagTesouro/archive/v1.4.zip)
+- Adicionar os arquivos em um pasta dentro do Joomla
 - Editar arquivo pagtesouro.JSON
-- Criar dentro do Joomla abertura para iframe e apontar para o arquivo index.php
+- Criar dentro do Joomla um [conteudo do tipo iframe](https://github.com/bitts/PagTesouro/wiki/Joomla!-Importando-como-m%C3%B3dulo) e aponte para o arquivo index.php
 - O arquivo pagtesouro.html é a template do formulário e PODE (não precisa) ser modificada para adequar-se melhor a realidade de onde deseja integrar o sisteminha
 - Evite modificar arquivos como o pagtesouro.php ou o pagtesouro.html, se você realmente não sabe o que esta fazendo
 - A descrição pode ser alterada no arquivo pagtesouro.json para facilitar o uso pelo cliente, no caso de varias UGs você pode editar para "UG 6666-6 | 701 - Indenizações" ao invés de utilizar somente "701 - INDENIZAÇÕES"
