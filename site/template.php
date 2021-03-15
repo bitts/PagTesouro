@@ -5,15 +5,20 @@ defined('_JEXEC') or die;
 try {
 	$document   = JFactory::getDocument();
 
+	
+	//$link = '<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />';
+	//$document->addCustomTag($link);
+	$link = '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />';
+	$document->addCustomTag($link);
+	
 	$script="<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js'></script>";
 	$document->addCustomTag($script);	
 	
     	$script="<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>";
 	$document->addCustomTag($script);
 	
-	$script="<script src='components/com_pagtesouro/pagtesouro.js'></script>";
+	$script="<script src='". JUri::base() . "/components/com_pagtesouro/pagtesouro.js'></script>";
 	$document->addCustomTag($script);
-	
 	
 	$styles= "<style>
           div.all{ padding: 25px; }
