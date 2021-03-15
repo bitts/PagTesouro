@@ -3,7 +3,7 @@
 /*
 # Title: Sisteminha mixuruca de integração ao PagTesouro
 # Description: sistema para geração de GRU do PagTesouro
-# Author: 2º Ten Marcelo Valvassori BITTENCOURT
+# Author: Marcelo Valvassori Bittencourt
 # E-mail: marcelo.valvassori.bittencourt@gmail.com
 # version: 1.4
 # Modificação: 12 MAR 2021
