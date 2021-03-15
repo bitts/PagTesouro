@@ -5,6 +5,8 @@ Formulário de integração com API do PagTesouro
 
 <p align="left"><a href="https://downloads.joomla.org" target="_blank" rel="noopener noreferrer"><img src="https://downloads.joomla.org/images/homepage/joomla-logo.png" alt="Joomla Logo"></a></p>
 
+[extensions.joomla.org - PagTesouro](https://extensions.joomla.org/index.php?option=com_jed&view=extension&layout=default&id=15302&Itemid=145)
+
 
 ## Créditos
 
