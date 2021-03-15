@@ -1,14 +1,13 @@
 # PagTesouro
 Formulário de integração com API do PagTesouro
 
-[Versão 2.0 - Plugin Joomla!](https://github.com/bitts/PagTesouro/wiki/Plugin-Joomla!)
-
 [Versão 1.4 - Formulário Simples](https://github.com/bitts/PagTesouro/archive/v1.4.zip)
 
 ## Créditos
 
 ### Author / Autores
 [Marcelo Valvassori Bittencourt (bitts)](https://github.com/bitts)
+
 ### Init Project 
 [Júlio César Vieira Malliotti (Malliotti)](https://github.com/malliotti)
 
@@ -33,9 +32,6 @@ https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
     - [Validado] Adicionado novas formas de envio dos dados ao PagTesouro (file_get_contents e fopen, além do curl como última alternativa já que em muitos servidores algumas dessas bibliotecas podem não estarem habilitadas por default no PHP)
     - [Não Validado] Adição de arquvio .htaccess com regras básicas para segurança ou para eviar erros de chamada
 - [22/02/2021] 1.3 - [Validado] Funcional para diversos Token
-- [12/03/2021] 1.4.1 - [Validado] Funciona como Componente do Joomla "[PagTesouro-1.4.zip](https://github.com/bitts/PagTesouro/releases/download/v1.4.1/PagTesouro-1.4.zip)" 
-- [Veja Documentação de como Instalar no Joomla!](https://github.com/bitts/PagTesouro/wiki/Joomla!-Importando-como-m%C3%B3dulo)
-- [13/03/2021] 2.0 [Validado] Funciona agora como um plugin do Joomla! https://github.com/bitts/PagTesouro/releases/download/v2.0/INSTALADOR.zip
     
 
 # Primeiros passos antes da implementação
