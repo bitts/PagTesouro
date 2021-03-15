@@ -3,7 +3,8 @@ Formulário de integração com API do PagTesouro
 
 [Versão 2.0 - Plugin Joomla!](https://github.com/bitts/PagTesouro/wiki/Plugin-Joomla!)
 
-![CMS Joomla!](https://avatars.githubusercontent.com/u/751633?s=200&v=4)
+<p align="left"><a href="https://downloads.joomla.org" target="_blank" rel="noopener noreferrer"><img src="https://downloads.joomla.org/images/homepage/joomla-logo.png" alt="Joomla Logo"></a></p>
+
 
 ## Créditos
 
