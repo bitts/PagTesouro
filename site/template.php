@@ -14,7 +14,7 @@ try {
 	$script="<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js'></script>";
 	$document->addCustomTag($script);	
 	
-    $script="<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>";
+    	$script="<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>";
 	$document->addCustomTag($script);
 	
 	
@@ -47,19 +47,19 @@ try {
                         type: 'POST',
                         data: { 
                             datatopagtesouro : { 
-                            'codigoServico': $('#input_codigoServico').val(),
-                            'referencia': $('#input_referencia').val(),
-                            'competencia': $('#input_competencia').val(),
-                            'vencimento': $('#input_vencimento').val(),
-                            'cnpjCpf': $('#input_cnpjCpf').val(),
-                            'nomeContribuinte': $('#input_nomeContribuinte').val(),
-                            'valorPrincipal': $('#input_valorPrincipal').val(),
-                            'valorDescontos': $('#input_valorDescontos').val(),
-                            'valorOutrasDeducoes': $('#input_valorOutrasDeducoes').val(),
-                            'valorMulta': $('#input_valorMulta').val(),
-                            'valorJuros': $('#input_valorJuros').val(),
-                            'valorOutrosAcrescimos': $('#input_valorOutrosAcrescimos').val(),
-                            'modoNavegacao': $('#input_modoNavegacao').val()
+				    'codigoServico': $('#input_codigoServico').val(),
+				    'referencia': $('#input_referencia').val(),
+				    'competencia': $('#input_competencia').val(),
+				    'vencimento': $('#input_vencimento').val(),
+				    'cnpjCpf': $('#input_cnpjCpf').val(),
+				    'nomeContribuinte': $('#input_nomeContribuinte').val(),
+				    'valorPrincipal': $('#input_valorPrincipal').val(),
+				    'valorDescontos': $('#input_valorDescontos').val(),
+				    'valorOutrasDeducoes': $('#input_valorOutrasDeducoes').val(),
+				    'valorMulta': $('#input_valorMulta').val(),
+				    'valorJuros': $('#input_valorJuros').val(),
+				    'valorOutrosAcrescimos': $('#input_valorOutrosAcrescimos').val(),
+				    'modoNavegacao': $('#input_modoNavegacao').val()
                             }
                         },            
                         success: function(_resposta){
