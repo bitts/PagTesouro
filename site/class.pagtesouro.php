@@ -13,14 +13,9 @@
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
 */
-DEFINE("DEBUG", false );
-
-
-DEFINE("URLREQUEST", DEBUG ? "https://valpagtesouro.tesouro.gov.br" :"https://pagtesouro.tesouro.gov.br" );
-
 class PagTesouro{
     //url de requisição <cnf doc>
-    private static $urlRequest = URLREQUEST. "/api/gru/solicitacao-pagamento";
+    private static $urlRequest = "https://pagtesouro.tesouro.gov.br/api/gru/solicitacao-pagamento";
     
     public function __construct() {
     }

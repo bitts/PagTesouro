@@ -6,8 +6,6 @@ try {
 	$document   = JFactory::getDocument();
 
 	
-	//$link = '<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />';
-	//$document->addCustomTag($link);
 	$link = '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />';
 	$document->addCustomTag($link);
 	

@@ -2,20 +2,19 @@
 <extension type="component" version="3.0" method="upgrade">
 	<name>com_pagtesouro</name>
 	<author>Marcelo Valvassori Bittencourt (www.mbitts.com)</author>
-	<creationDate>13/03/2021</creationDate>
+	<creationDate>16/03/2021</creationDate>
 	<authorEmail>marcelo.valvassori.bittencourt@gmail.om</authorEmail>
-	<authorUrl>https://www.mbitts.com</authorUrl>
+	<authorUrl>https://github.com/bitts/</authorUrl>
 	<copyright>Bitts</copyright>
 	<license>GNU/GPL</license>
 	<version>2.0.0</version>
 	<description>PagTesouro Joomla!</description>
-	<projectName>PagTesouro</projectName>
+	<projectName>Componente PagTesouro</projectName>
 	
 	<files folder="site">
 		<filename client="site" component="com_pagtesouro">pagtesouro.php</filename>
 		<filename client="site">class.pagtesouro.php</filename>
 		<filename client="site">template.php</filename>		
-		<filename client="site">pagtesouro.js</filename>		
 	</files>
 	
 	<administration>

@@ -3,10 +3,7 @@ defined('_JEXEC') or die;
 
 
 try {
-	
 
-
-	//Returns a reference to the global document object
 	$document   = & JFactory::getDocument();
 	
 	$styles= "<style>
