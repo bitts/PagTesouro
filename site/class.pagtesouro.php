@@ -3,26 +3,24 @@
 /*
 # Title: Sisteminha mixuruca de integração ao PagTesouro
 # Description: sistema para geração de GRU do PagTesouro
-# Author: 2º Ten Marcelo Valvassori BITTENCOURT
+# Author: Marcelo Valvassori Bittencourt
 # E-mail: marcelo.valvassori.bittencourt@gmail.com
 # version: 1.4
 # Modificação: 12 MAR 2021
+# Modificação: 16 MAR 2021
 *
 * This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
 */
-DEFINE("DEBUG", false );
-
-
-DEFINE("URLREQUEST", DEBUG ? "https://valpagtesouro.tesouro.gov.br" :"https://pagtesouro.tesouro.gov.br" );
 
 class PagTesouro{
     //url de requisição <cnf doc>
-    private static $urlRequest = URLREQUEST. "/api/gru/solicitacao-pagamento";
+    private static $urlRequest = "https://pagtesouro.tesouro.gov.br/api/gru/solicitacao-pagamento";
     
     public function __construct() {
+        
     }
     
     //faz conexão com servidor do PagTesouro e envia a chave de autorização via cabeçalho/header da requisição, bem como define POST como metodo de envio
