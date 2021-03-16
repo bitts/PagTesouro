@@ -1,10 +1,23 @@
 <?php
-defined('_JEXEC') or die;
 
+/*
+# Title: Sisteminha mixuruca de integração ao PagTesouro
+# Description: sistema para geração de GRU do PagTesouro
+# Author: Marcelo Valvassori Bittencourt
+# E-mail: marcelo.valvassori.bittencourt@gmail.com
+# version: 2.0
+# Modificação: 16 MAR 2021
+*
+* This version may have been modified pursuant
+* to the GNU General Public License, and as distributed it includes or
+* is derivative of works licensed under the GNU General Public License or
+* other free or open source software licenses.
+*/
+
+defined('_JEXEC') or die;
 
 try {
 	$document   = JFactory::getDocument();
-
 	
 	$link = '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />';
 	$document->addCustomTag($link);
@@ -12,7 +25,7 @@ try {
 	$script="<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js'></script>";
 	$document->addCustomTag($script);	
 	
-    $script="<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>";
+    	$script="<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>";
 	$document->addCustomTag($script);
 	
 	
@@ -110,24 +123,22 @@ try {
         });
         </script>";
         
-	$document->addCustomTag($script);
-	
-	
+	$document->addCustomTag($script);	
 	
 	$styles= "<style>
           div.all{ padding: 25px; }
           .iframe-epag {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            width: 100%;
-            height: 98%;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		width: 100%;
+		height: 98%;
           }
 
-		  #form_principal input, #form_principal select{
-		  	height: 38px !important;
-		  	width: 100%;
-		  }
+	  #form_principal input, #form_principal select{
+		height: 38px !important;
+		width: 100%;
+	  }
         </style>";
 
 	$document->addCustomTag($styles);
