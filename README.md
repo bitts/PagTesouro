@@ -1,6 +1,11 @@
 # PagTesouro
 Formulário de integração com API do PagTesouro
 
+[Versão 2.0 - Componente Joomla!](https://github.com/bitts/PagTesouro/wiki/Componente-Joomla)
+
+<p align="left"><a href="https://downloads.joomla.org" target="_blank" rel="noopener noreferrer"><img src="https://downloads.joomla.org/images/homepage/joomla-logo.png" alt="Joomla Logo"></a></p>
+
+
 ## Créditos
 
 ### Author / Autores
