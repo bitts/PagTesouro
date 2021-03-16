@@ -1,7 +1,7 @@
 # PagTesouro
 Formulário de integração com API do PagTesouro
 
-[Versão 2.0 - Plugin Joomla!](https://github.com/bitts/PagTesouro/wiki/Plugin-Joomla!)
+[Versão 2.0 - Componente Joomla!](https://github.com/bitts/PagTesouro/wiki/Componente-Joomla)
 
 <p align="left"><a href="https://downloads.joomla.org" target="_blank" rel="noopener noreferrer"><img src="https://downloads.joomla.org/images/homepage/joomla-logo.png" alt="Joomla Logo"></a></p>
 
@@ -21,7 +21,7 @@ Sistema simples para geração de GRU utilizando a API do PagTesouro. Projeto in
 https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
 
 # Versions
-- [14/03/2021] 2.0 [Validado] Plugin do Joomla! https://github.com/bitts/PagTesouro/releases/download/v2.0/INSTALADOR.zip
+- [16/03/2021] 2.0 [Validado] Componente do Joomla! https://github.com/bitts/PagTesouro/releases/download/v2.0/INSTALADOR.zip
     
 
 # Primeiros passos antes da implementação
