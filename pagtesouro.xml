@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>com_pagtesouro</name>
+	<author>Marcelo Valvassori Bittencourt (www.mbitts.com)</author>
+	<creationDate>13/03/2021</creationDate>
+	<authorEmail>marcelo.valvassori.bittencourt@gmail.om</authorEmail>
+	<authorUrl>https://www.mbitts.com</authorUrl>
+	<copyright>Bitts</copyright>
+	<license>GNU/GPL</license>
+	<version>2.0.0</version>
+	<description>PagTesouro Joomla!</description>
+	<projectName>PagTesouro</projectName>
+	
+	<files folder="site">
+		<filename client="site" component="com_pagtesouro">pagtesouro.php</filename>
+		<filename client="site">class.pagtesouro.php</filename>
+		<filename client="site">template.php</filename>		
+		<filename client="site">pagtesouro.js</filename>		
+	</files>
+	
+	<administration>
+		<menu alt="COM_PAGTESOURO" link="option=com_pagtesouro">PagTesouro</menu>
+		<submenu>
+		</submenu>
+		<files folder="admin">
+			<filename component="com_pagtesouro">pagtesouro.php</filename>
+			<filename>pagtesouro.xml</filename>
+			<filename>pagtesouro-save.php</filename>
+			<filename client="site">pagtesouro.json</filename>
+			<filename>index.html</filename>
+		</files>
+	</administration>
+</extension>
