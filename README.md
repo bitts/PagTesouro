@@ -54,6 +54,7 @@ Aba PagTesouro / Catálago de serviços / Inserir o código da UG, código de re
 - Ir no Menu > Extesions > Manager > Install
 - Na opção "Upload Package File" você precisa fazer o download do arquivo da versão [2.0](https://github.com/bitts/PagTesouro/releases/download/v2.0/INSTALADOR.zip) para o seu computador e depois escolher o arquivo para instalação;
 - Vá no Menu "Components" > "PagTesouro", para adicionar ou remover seus Tokens e Serviços
+- Em caso de dificuldades veja documentação do sistema ou a interpretação das [mensagens](https://github.com/bitts/PagTesouro/wiki/Erros-e-mensagens-do-Sistema-do-Sistema) do sistema
 
 # Uso para hospedagem simples
 - Realize o download do sistema na versão [v1.4](https://github.com/bitts/PagTesouro/archive/v1.4.zip)
