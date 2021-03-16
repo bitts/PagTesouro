@@ -56,7 +56,7 @@ Aba PagTesouro / Catálago de serviços / Inserir o código da UG, código de re
 - Editar arquivo pagtesouro.JSON
 
 Caso você utilize Joomla é quer colocar o conteudo deste formulário de forma integrada em seu site
-- Criar dentro do Joomla um [conteudo do tipo iframe](https://github.com/bitts/PagTesouro/wiki/Joomla!-Importando-como-m%C3%B3dulo) e aponte para o arquivo index.php
+- Criar dentro do Joomla um [conteudo do tipo iframe](https://github.com/bitts/PagTesouro/wiki/Incluindo-um-conte%C3%BAdo-do-tipo-Iframe-no-Joomla) e aponte para o arquivo index.php
 - O arquivo pagtesouro.html é a template do formulário e PODE (não precisa) ser modificada para adequar-se melhor a realidade de onde deseja integrar o sisteminha
 - Evite modificar arquivos como o pagtesouro.php ou o pagtesouro.html, se você realmente não sabe o que esta fazendo
 - A descrição pode ser alterada no arquivo pagtesouro.json para facilitar o uso pelo cliente, no caso de varias UGs você pode editar para "UG 6666-6 | 701 - Indenizações" ao invés de utilizar somente "701 - INDENIZAÇÕES"
