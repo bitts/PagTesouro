@@ -1,5 +1,5 @@
 <?php
-
+defined('_JEXEC') or die;
 /*
 # Title: Sisteminha mixuruca de integração ao PagTesouro
 # Description: sistema para geração de GRU do PagTesouro
@@ -24,7 +24,7 @@ class PagTesouro{
     public function gerar($params, $file_prm = 'pagtesouro.json'){
         $result = null;
         $dbg = new stdClass();
-
+        $file_prm = JUri::base() . "/administrator/components/com_pagtesouro/pagtesouro.json";
         try {
 
             //aqui é incrementado os dados vindos do formulário e definido o Token de acordo com o Serviço escolhido
