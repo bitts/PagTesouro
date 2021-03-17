@@ -17,6 +17,7 @@ class PagTesouro{
     private static $urlRequest = "https://pagtesouro.tesouro.gov.br/api/gru/solicitacao-pagamento";
     
     public function __construct() {
+        
     }
     
     //faz conexão com servidor do PagTesouro e envia a chave de autorização via cabeçalho/header da requisição, bem como define POST como metodo de envio
