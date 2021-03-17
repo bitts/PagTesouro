@@ -20,6 +20,7 @@ include('class.pagtesouro.php');
 try{
 
     $parametros = "";
+    
     $file_prm = getcwd() . "/administrator/components/com_pagtesouro/pagtesouro.json";
     if( file_exists($file_prm) ){
         $parametros = json_decode( file_get_contents($file_prm), true);

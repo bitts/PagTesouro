@@ -54,7 +54,7 @@ try {
                 ac_form : function(){
                     try{
                         $.ajax({
-                        url: jPagTesouro.url + 'components/com_pagtesouro/pagtesouro.php',
+                        url: jPagTesouro.url + 'components/com_pagtesouro/call.php',
                         type: 'POST',
                         data: { 
                             datatopagtesouro : { 

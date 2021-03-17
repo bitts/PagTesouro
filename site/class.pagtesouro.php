@@ -1,5 +1,4 @@
 <?php
-defined('_JEXEC') or die;
 /*
 # Title: Sisteminha mixuruca de integração ao PagTesouro
 # Description: sistema para geração de GRU do PagTesouro
@@ -21,10 +20,16 @@ class PagTesouro{
     }
     
     //faz conexão com servidor do PagTesouro e envia a chave de autorização via cabeçalho/header da requisição, bem como define POST como metodo de envio
-    public function gerar($params, $file_prm = 'pagtesouro.json'){
+    public function gerar($params){
         $result = null;
         $dbg = new stdClass();
-        $file_prm = JUri::base() . "/administrator/components/com_pagtesouro/pagtesouro.json";
+
+        $url = explode('/',getcwd());
+		unset($url[count($url)-1]);
+		unset($url[count($url)-1]);
+		$url = implode('/',$url);
+
+        $file_prm = $url . "/administrator/components/com_pagtesouro/pagtesouro.json";
         try {
 
             //aqui é incrementado os dados vindos do formulário e definido o Token de acordo com o Serviço escolhido
@@ -200,10 +205,4 @@ class Template{
         ob_get_clean();
         return $this->extract($template);
     }
-}
-
-
-if(isset($_REQUEST['datatopagtesouro'])){
-    $obPagto = new PagTesouro();
-    $obPagto->gerar($_REQUEST['datatopagtesouro']);
 }
