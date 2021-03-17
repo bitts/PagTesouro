@@ -5,7 +5,7 @@
 # Author: Marcelo Valvassori Bittencourt
 # E-mail: marcelo.valvassori.bittencourt@gmail.com
 # version: 2.0
-# Modificação: 16 MAR 2021
+# Modificação: 17 MAR 2021
 *
 * This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -17,7 +17,7 @@ class PagTesouro{
     private static $urlRequest = "https://pagtesouro.tesouro.gov.br/api/gru/solicitacao-pagamento";
     
     public function __construct() {
-        
+
     }
     
     //faz conexão com servidor do PagTesouro e envia a chave de autorização via cabeçalho/header da requisição, bem como define POST como metodo de envio
