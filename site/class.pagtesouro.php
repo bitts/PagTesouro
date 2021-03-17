@@ -51,7 +51,7 @@ class PagTesouro{
                             }
                         }
                     }$dbg->Authorization = $enviar->token;
-                }else $dbg->error[] = "Arquivo {$file_prm} em branco ou incompleto, talvez até mesmo mal formatado. Verifique arquivo.";
+                }else $dbg->error[] = "Erro na leitura do dados cadastrados no sistema. Verifique cadastro do Token.";
             }else $dbg->error[] = "Problemas no recebimento dos dados do formulário.";
         } catch (Exception $e) {
             $dbg->error[] = $e->getMessage();
