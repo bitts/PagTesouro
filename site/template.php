@@ -98,7 +98,15 @@ try {
                                 }
                                 if(result.proximaUrl) {
                                 $( '.iframe-epag' ).attr('src',result.proximaUrl);
-                                setTimeout(function(){ $( '.dialog_pagtesouro' ).show().dialog({width: 800,height: 800}); },1000)
+                                	setTimeout(function(){ 
+						$( '.dialog_pagtesouro' ).show().dialog({
+							width: 800,
+							height: 800,
+						    	close : function(){
+								location.reload();		
+						        }
+						});
+					},1000)
                                 }
                             }
                             }
