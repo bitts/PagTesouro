@@ -37,7 +37,10 @@ https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
 - [01/02/2021] 1.4 - [Validado] Sistema para hospedagem simples
 - [16/03/2021] 2.0 Funciona como componente do Joomla! 
 - [Veja Documentação de como Instalar no Joomla!](https://github.com/bitts/PagTesouro/wiki/Componente-Joomla)
-- [28/03/2021] 2.1 - Diversas melhoras como possibilidade de realizar backup do cadastro bem como organizar o(s) Token(s) por UGE, criando um "group" no select
+- [28/03/2021] 2.1 - Diversas melhoras:
+        - Realizar backup do cadastro;
+        - Organizar o(s) Token(s) por UGE, criando um "group" no select;
+        - Diversas melhoras na interface de administração
 
 # Primeiros passos antes da implementação
 Siga os passos abaixo para que o sistema esteja funcional:
