@@ -1,7 +1,7 @@
 # PagTesouro
 Formulário de integração com API do PagTesouro
 
-[Versão 2.0 - Componente Joomla!](https://github.com/bitts/PagTesouro/wiki/Componente-Joomla)
+[Versão 2.1.0 - Componente Joomla!](https://github.com/bitts/PagTesouro/wiki/Componente-Joomla)
 
 <p align="left"><a href="https://downloads.joomla.org" target="_blank" rel="noopener noreferrer"><img src="https://downloads.joomla.org/images/homepage/joomla-logo.png" alt="Joomla Logo"></a></p>
 
@@ -37,7 +37,7 @@ https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
 - [01/02/2021] 1.4 - [Validado] Sistema para hospedagem simples
 - [16/03/2021] 2.0 Funciona como componente do Joomla! 
 - [Veja Documentação de como Instalar no Joomla!](https://github.com/bitts/PagTesouro/wiki/Componente-Joomla)
-    
+- [28/03/2021] 2.1 Diversas melhoras como possibilidade de realizar backup do cadastro bem como organizar o(s) Token(s) por UGE, criando um "group" no select
 
 # Primeiros passos antes da implementação
 Siga os passos abaixo para que o sistema esteja funcional:

@@ -38,6 +38,13 @@ class PagTesouro{
                 $params['modoNavegacao'] = "2";
                 $params['urlNotificacao'] = 'http://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
                 $params['urlRequest'] = self::$urlRequest;
+                
+                //removendo as mascaras
+                $params['competencia'] = preg_replace('/[^0-9]/', '', $params['competencia'] );
+                $params['referencia'] = preg_replace('/[^0-9]/', '', $params['referencia'] );
+                $params['vencimento'] = preg_replace('/[^0-9]/', '', $params['vencimento'] );
+                $params['cnpjCpf'] = preg_replace('/[^0-9]/', '', $params['cnpjCpf'] );
+
                 $fields = json_encode($params);
 
                 $dbg->campos = json_decode($fields);

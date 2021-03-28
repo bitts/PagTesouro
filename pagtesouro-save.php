@@ -22,10 +22,19 @@ $arry = $_REQUEST['obj'];
 $Itens = [];
 foreach($arry as $a){
 	$obj = new stdClass();
-	$obj->token = $a['token'];
-	foreach($a['servicos'] as $s){
-		$obj->servicos[] = (object)$s;
+	
+	$obj->uge_cod = $a['uge_cod'];
+	$obj->uge_descricao = $a['uge_descricao'];
+
+	foreach($a['tokens'] as $tk){
+		$objT = new stdClass();
+		$objT->token = $tk['token'];
+		foreach($tk['servicos'] as $s){
+			$objT->servicos[] = (object)$s;
+		}		
+		$obj->tokens[] = $objT;
 	}
+	
  	$Itens[] = $obj;
 }
 

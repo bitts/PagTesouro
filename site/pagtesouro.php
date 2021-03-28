@@ -29,10 +29,17 @@ try{
     $options = "";
     if(!empty($parametros) && is_array($parametros)){
         foreach($parametros as $prm){
-            foreach($prm['servicos'] as $srv){
-                if(isset($srv['codigo']) && isset($srv['descricao']))
-                    $options .= "<option value='{$srv['codigo']}'>{$srv['descricao']}</option>";
+            
+            $options .= "<optgroup label='{$prm['uge_descricao']}'>";
+            foreach($prm['tokens'] as $tkn){
+
+                foreach($tkn['servicos'] as $srv){
+                    if(isset($srv['codigo']) && isset($srv['descricao']))
+                        $options .= "<option value='{$srv['codigo']}'>{$srv['descricao']}</option>";
+                }
+                
             }
+            $options .= "</optgroup>";
         }
         $template = new Template('template.php');
         $template->set('cod_servico', $options);
