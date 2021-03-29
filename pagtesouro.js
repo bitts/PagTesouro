@@ -51,6 +51,9 @@ jQuery(function($){
                 'Data da última atualização do Sistema : ',                
                 git_update.getDate()+ '/' + (git_update.getMonth()+1) + '/'+ git_update.getFullYear(),
                 ' ('+ git_days_lastupdate + ' dias atrás)'
+            ),
+            $('<h3 />').append(
+                'Atenção: em caso de erro ao tentar atualizar o componente, remova as pastas /administrator/components/com_patesouro e /components/com_pagtesouro e tente novamente.'
             )
         );
     });
