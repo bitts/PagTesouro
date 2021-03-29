@@ -122,7 +122,7 @@ jQuery(function($){
                                                                             $('<input />',{'type':'text', 'placeholder':'Código', 'name': 'cod_servico'}).css({'width':'auto'}).addClass('cod_servico form-control')
                                                                         ),
                                                                         $('<td />').append(
-                                                                            $('<input />',{'type':'text', 'placeholder':'Descrição do Serviço', 'name': 'servico'}).css({'width':'98%'}).addClass('servico form-control')
+                                                                            $('<input />',{'type':'text', 'placeholder':'Descrição do Serviço - forneça uma descrição de forma amigável para uma melhor compreensão', 'name': 'servico'}).css({'width':'98%'}).addClass('servico form-control')
                                                                         ),
                                                                         $('<td />').css({'width':'60px'}).append(
                                                                             $('<button />')
@@ -216,7 +216,7 @@ jQuery(function($){
                                     $('<input />',{'type':'text', 'placeholder':'Código', 'name': 'cod_servico'}).css({'width':'auto'}).addClass('cod_servico form-control').val(itm.codigo)
                                 ),
                                 $('<td />').append(
-                                    $('<input />',{'type':'text', 'placeholder':'Descrição do Serviço', 'name': 'servico'}).css({'width':'98%'}).addClass('servico form-control').val(itm.descricao)
+                                    $('<input />',{'type':'text', 'placeholder':'Descrição do Serviço - forneça uma descrição de forma amigável para uma melhor compreensão', 'name': 'servico'}).css({'width':'98%'}).addClass('servico form-control').val(itm.descricao)
                                 ),
                                 $('<td />').css({'width':'60px'}).append(
                                     $('<button />')
@@ -482,7 +482,7 @@ jQuery(function($){
                                                                         $('<input />',{'type':'text', 'placeholder':'Código', 'name': 'cod_servico'}).css({'width':'auto'}).addClass('cod_servico form-control')
                                                                     ),
                                                                     $('<td />').append(
-                                                                        $('<input />',{'type':'text', 'placeholder':'Descrição do Serviço', 'name': 'servico'}).css({'width':'98%'}).addClass('servico form-control')
+                                                                        $('<input />',{'type':'text', 'placeholder':'Descrição do Serviço - forneça uma descrição de forma amigável para uma melhor compreensão', 'name': 'servico'}).css({'width':'98%'}).addClass('servico form-control')
                                                                     ),
                                                                     $('<td />').css({'width':'60px'}).append(
                                                                         $('<button />')
