@@ -10,7 +10,7 @@ Formulário de integração com API do PagTesouro
 
 ### Author / Autores
 [Marcelo Valvassori Bittencourt (bitts)](https://github.com/bitts)
-### Init Project 
+### Init Project / Software Tester
 [Júlio César Vieira Malliotti (Malliotti)](https://github.com/malliotti)
 
 # Sistema de Pagamento do Tesouro
@@ -38,9 +38,14 @@ https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
 - [16/03/2021] 2.0 Funciona como componente do Joomla! 
 - [Veja Documentação de como Instalar no Joomla!](https://github.com/bitts/PagTesouro/wiki/Componente-Joomla)
 - [28/03/2021] 2.1 - Diversas melhoras:
+
         - Realizar backup do cadastro;
+
         - Organizar o(s) Token(s) por UGE, criando um "group" no select;
-        - Diversas melhoras na interface de administração
+
+        - Diversas melhoras na interface de administração;
+
+        - Aplicação de Mascara nos campos do formulário de geração do PagTesouro
 
 # Primeiros passos antes da implementação
 Siga os passos abaixo para que o sistema esteja funcional:
