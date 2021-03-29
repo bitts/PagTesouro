@@ -13,9 +13,11 @@
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
 */
+
 class PagTesouro{
     //url de requisição <cnf doc>
     private static $urlRequest = "https://pagtesouro.tesouro.gov.br/api/gru/solicitacao-pagamento";
+    private static $debug = false;
     
     public function __construct() {
 
@@ -58,14 +60,17 @@ class PagTesouro{
                 if(!empty($parametros) && is_array($parametros)){
                     $enviar = new stdClass();
                     foreach($parametros as $prm){
-                        foreach($prm['servicos'] as $srv){
-                            if($srv['codigo'] == $dbg->campos->codigoServico){
-                                $enviar->codigoServico = $srv['codigo'];
-                                $enviar->token = $prm['token'];
+                        foreach($prm['tokens'] as $tkn){
+                            foreach($tkn['servicos'] as $srv){
+                                if($srv['codigo'] == $dbg->campos->codigoServico){
+                                    $enviar->codigoServico = $srv['codigo'];
+                                    $dbg->Authorization = $enviar->token = $tkn['token'];
+                                }
                             }
                         }
-                    }$dbg->Authorization = $enviar->token;
+                    }
                 }else $dbg->error[] = "Erro na leitura do dados cadastrados no sistema. Verifique cadastro do Token.";
+
             }else $dbg->error[] = "Problemas no recebimento dos dados do formulário.";
         } catch (Exception $e) {
             $dbg->error[] = $e->getMessage();
@@ -174,6 +179,12 @@ class PagTesouro{
 
         if( !isset($dbg->result) || empty($dbg->result)) $dbg->error[] = "Não foi possível estabelecer conexão com nenhum dos metodos conhecidos.";
 
+        if(!self::$debug){
+            unset($dbg->campos);
+            unset($dbg->Authorization);
+            unset($dbg->methodo);
+        }
+        
         echo json_encode($dbg);
     }
 }
