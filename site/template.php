@@ -29,7 +29,7 @@ try {
     $script="<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>";
 	$document->addCustomTag($script);
 
-    $document->addCustomTag("<script src='". JUri::base() ."components/com_pagtesouro/jquery.mask.js'></script>");
+    $document->addCustomTag("<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js'></script>");
 	$document->addCustomTag($script);
 	
     $document->addCustomTag("<script src='". JUri::base() ."components/com_pagtesouro/template.js'></script>");

@@ -14,7 +14,6 @@
 	<files folder="site">
         <filename client="site">call.php</filename>
         <filename client="site">class.pagtesouro.php</filename>
-        <filename client="site">jquery.mask.js</filename>
 		<filename client="site" component="com_pagtesouro">pagtesouro.php</filename>
         <filename client="site">template.js</filename>
 		<filename client="site">template.php</filename>
