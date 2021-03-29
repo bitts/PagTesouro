@@ -347,8 +347,8 @@ jQuery(function($){
             reader.onload = function() {
                 let json = reader.result;
                 $('textarea.pagtesourojson').val(json);
-                populate_pagtesouro(json)
-                URL.revokeObjectURL(reader)
+                populate_pagtesouro(json);
+                URL.revokeObjectURL(reader);
             }
         });
 
@@ -358,7 +358,7 @@ jQuery(function($){
             populate_pagtesouro(resposta);
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            msg('Não foi possível retornar dados.')
+            msg('Não foi possível retornar dados.');
         }
     });
 
