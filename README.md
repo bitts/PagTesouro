@@ -39,13 +39,19 @@ https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
 - [Veja Documentação de como Instalar no Joomla!](https://github.com/bitts/PagTesouro/wiki/Componente-Joomla)
 - [28/03/2021] 2.1 - Diversas melhoras:
 
-        - Realizar backup do cadastro;
+        - Exportar cadastro realizado na interface Administrativa (Backup do pagtesouro.json)
 
-        - Organizar o(s) Token(s) por UGE, criando um "group" no select;
+        - No formulário de gração o(s) Serviço(s) agora são apresentados por UGE (optgroup do select)
 
-        - Diversas melhoras na interface de administração;
+        - Diversas melhoras na interface de administração para se adptar mais ao padrão Joomla!
 
         - Aplicação de Mascara nos campos do formulário de geração do PagTesouro
+
+        - Formulário de geração mais compacto 
+
+        - Na interface administrativa aba para acompanhar atualizações do Componente do PagTesouro
+
+        - Também na interface administrativa aba com conteudo do arquivo README.me mais atual direto do Github
 
 # Primeiros passos antes da implementação
 Siga os passos abaixo para que o sistema esteja funcional:
