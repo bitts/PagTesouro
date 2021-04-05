@@ -12,6 +12,8 @@ Formulário de integração com API do PagTesouro
 [Marcelo Valvassori Bittencourt (bitts)](https://github.com/bitts)
 ### Init Project / Software Tester
 [Júlio César Vieira Malliotti (Malliotti)](https://github.com/malliotti)
+### Colaboração Indireta
+[Rafael Menezes (rafaelms87)](https://github.com/rafaelms87)
 
 # Sistema de Pagamento do Tesouro
 O PagTesouro é um componente de processamento de pagamentos digitais gerido pela Secretaria do Tesouro Nacional (STN), um órgão vinculado ao Ministério da Economia e que tem como missão principal gerenciar as contas públicas de forma eficiente e transparente. No contexto do processo de Gerenciamento das Receitas da União, o componente PagTesouro atua no cenário de recolhimento de receitas de Órgãos e entidades da administração Pública Federal como taxas (custas judiciais, emissão de passaporte, etc.), aluguéis de imóveis públicos, serviços administrativos e educacionais, multas, entre outros, permitindo o pagamento em forma digital, assim como a impressão do boleto de pagamento. O pagamento pode ser feito pelas formas Pix, cartão de crédito e boleto de GRU Simples.
