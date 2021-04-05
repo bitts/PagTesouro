@@ -55,6 +55,10 @@ https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
     
 
 # Primeiros passos antes da implementação
+[Passo a Passo - Material de Rafael Menezes](https://github.com/rafaelms87/pagtesouro/files/6236911/Passo.a.Passo.pdf)
+
+Resumo
+
 Siga os passos abaixo para que o sistema esteja funcional:
 
 1 - Gere os Códigos Necessários (Setor Financeiro)
