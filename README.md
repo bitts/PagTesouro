@@ -4,6 +4,9 @@ Formulário de integração com API do PagTesouro
 <a href="https://github.com/bitts/PagTesouro/wiki/Componente-Joomla"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/bitts/pagtesouro"></a>
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/bitts/pagtesouro">
 <img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/bitts/pagtesouro">
+<img alt="GitHub all releases" src="https://img.shields.io/github/downloads/bitts/pagtesouro/total">
+<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/downloads/bitts/pagtesouro/v2.1/total">
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/bitts/pagtesouro">
 <!-- img alt="Packagist License (custom server)" src="https://img.shields.io/packagist/l/bitts/pagtesouro" -->
 
 <p align="left"><a href="https://downloads.joomla.org" target="_blank" rel="noopener noreferrer"><img src="https://downloads.joomla.org/images/homepage/joomla-logo.png" alt="Joomla Logo"></a></p>
