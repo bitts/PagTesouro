@@ -3,7 +3,7 @@
 # Description: sistema para geração de GRU do PagTesouro
 # Author: Marcelo Valvassori BITTENCOURT
 # E-mail: marcelo.valvassori.bittencourt@gmail.com
-# version: 2.1
+# version: 2.1.1
 # Modificação: 28 MAR 2021
 # Modificação: 12 ABR 2021
 */
