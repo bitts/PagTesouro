@@ -5,6 +5,7 @@
 # E-mail: marcelo.valvassori.bittencourt@gmail.com
 # version: 2.1
 # Modificação: 28 MAR 2021
+# Modificação: 12 ABR 2021
 */
 /**
  * 
@@ -122,10 +123,10 @@ jQuery(function($){
                                                                 $(this).closest('table.servicos').append(
                                                                     $('<tr />').addClass('item_servico').append(
                                                                         $('<td />').css({'width':'125px'}).append(
-                                                                            $('<input />',{'type':'text', 'placeholder':'Código', 'name': 'cod_servico'}).css({'width':'auto'}).addClass('cod_servico form-control')
+                                                                            $('<input />',{'type':'text', 'placeholder':'Código do Serviço Cadastrado', 'name': 'cod_servico'}).css({'width':'auto'}).addClass('cod_servico form-control')
                                                                         ),
                                                                         $('<td />').append(
-                                                                            $('<input />',{'type':'text', 'placeholder':'Descrição do Serviço - forneça uma descrição de forma amigável para uma melhor compreensão', 'name': 'servico'}).css({'width':'98%'}).addClass('servico form-control')
+                                                                            $('<input />',{'type':'text', 'placeholder':'Descrição do Serviço Cadastrado - forneça uma descrição de forma amigável para uma melhor compreensão', 'name': 'servico'}).css({'width':'98%'}).addClass('servico form-control')
                                                                         ),
                                                                         $('<td />').css({'width':'60px'}).append(
                                                                             $('<button />')
@@ -346,6 +347,7 @@ jQuery(function($){
 
             reader.onload = function() {
                 let json = reader.result;
+                $('fieldset.fielduge').remove();
                 $('textarea.pagtesourojson').val(json);
                 populate_pagtesouro(json);
                 URL.revokeObjectURL(reader);

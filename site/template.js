@@ -8,6 +8,7 @@
 # Modificação: 10 MAR 2021
 # Modificação: 17 MAR 2021
 # Modificação: 28 MAR 2021
+# Modificação: 12 ABR 2021
 *
 * This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -38,8 +39,9 @@ jQuery(function($){
                 .css({'width':'100px','text-align':'center','margin':'0 5px 0 5px'})
                 .maskMoney({ decimal: '.', thousands: '', precision: 2 });
 
-            $('#input_competencia, #input_referencia').css({'width':'150px','text-align':'center'}).mask('00/0000');
+            $('#input_competencia').css({'width':'150px','text-align':'center'}).mask('00/0000');
             $('#input_vencimento').css({'width':'150px','text-align':'center'}).mask('00/00/0000');
+            $('#input_referencia').mask('9#');
 
             $('#input_cnpjCpf').css({'width':'150px','text-align':'center'}).mask('000.000.000-00', {
                 onKeyPress : function(cpfcnpj, e, field, options) {

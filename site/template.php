@@ -8,6 +8,7 @@
 # version: 2.1
 # Modificação: 17 MAR 2021
 # Modificação: 28 MAR 2021
+# Modificação: 12 ABR 2021
 *
 * This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -50,11 +51,17 @@ try {
         height: 38px !important;
         width: 98%;
     }
-    .table_datas, .table_valores{
+    .table_datas, .table_valores, .table_contribuinte{
         text-align:center;
         border:0;
         width:100%;
         
+    }
+    .table_datas td, .table_valores td, .table_contribuinte td, .table_datas tr, .table_valores tr, .table_contribuinte tr{
+        border: 0;
+    }    
+    .table_contribuinte input#input_nomeContribuinte{
+        width:65%;
     }
     button[type='submit']{
         margin-top: 20px;
@@ -105,16 +112,21 @@ try {
             </tbody>
         </table>
 
-        <div>
-            <div>
-                <label for="input_cnpjCpf">CNPJ/CPF</label>
-                <input id="input_cnpjCpf" type="text" required>
-            </div>
-            <div>
-                <label for="input_nomeContribuinte">Nome do Contribuinte</label>
-                <input id="input_nomeContribuinte" type="text" placeholder="Nome do contribuinte. Pode ser o nome da empresa" required>
-            </div>
-        </div>
+        <table class="table_contribuinte">
+            <thead>
+                <tr style="text-align:center">
+                    <td for="input_cnpjCpf">CNPJ/CPF - Nome do Contribuinte</td>
+                </tr>
+            </thead>
+            </tbody>
+                <tr>
+                    <td>
+                        <input id="input_cnpjCpf" type="text" required>
+                        <input id="input_nomeContribuinte" type="text" placeholder="Nome do contribuinte. Pode ser o nome da empresa" required >
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
         <div style="text-align:center;">
             <label for="input_nomeContribuinte">Valor Principal</label>
