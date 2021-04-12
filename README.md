@@ -18,6 +18,10 @@ Formulário de integração com API do PagTesouro
 [Marcelo Valvassori Bittencourt (bitts)](https://github.com/bitts)
 ### Init Project / Software Tester
 [Júlio César Vieira Malliotti (Malliotti)](https://github.com/malliotti)
+
+### Colaboração Direta
+[Marcos Luiz Rezende de Melo (mlrmelo)](https://github.com/mlrmelo)
+
 ### Colaboração Indireta
 [Rafael Menezes (rafaelms87)](https://github.com/rafaelms87)
 
