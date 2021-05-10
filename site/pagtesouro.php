@@ -9,6 +9,7 @@
 # Modificação: 10 MAR 2021
 # Modificação: 17 MAR 2021
 # Modificação: 28 MAR 2021
+# Modificação: 10 ABR 2021
 *
 * This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -21,8 +22,12 @@ include('class.pagtesouro.php');
 try{
 
     $parametros = "";
-    
+    $pg = new PagTesouro();
+    $pg->createLinktoConfig();
+
     $file_prm = getcwd() . "/administrator/components/com_pagtesouro/pagtesouro.json";
+    if(!file_exists($file_prm))$file_prm = getcwd() . "/components/com_pagtesouro/pagtesouro.json";
+
     if( file_exists($file_prm) ){
         $parametros = json_decode( file_get_contents($file_prm), true);
     }
