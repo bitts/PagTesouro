@@ -219,7 +219,7 @@ class PagTesouro{
             unset($dbg->campos);
             unset($dbg->Authorization);
             unset($dbg->methodo);
-        }
+        }else $dbg->resultado = json_decode($dbg->result);
         
         echo json_encode($dbg);
     }
