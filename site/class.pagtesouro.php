@@ -22,6 +22,38 @@ class PagTesouro{
     public function __construct() {
 
     }
+	
+    public function createLinktoConfig(){
+        try{
+                $target = "/components/com_pagtesouro/";
+                if(!is_dir($target)){
+                    $target = "../components/com_pagtesouro/";
+                    $link = getcwd();
+                    $tar = explode('/',$link);
+                    $tar = implode('/',$tar);
+                    if(!is_dir("{$tar}/components/com_pagtesouro/")){
+                        mkdir("{$tar}/components/com_pagtesouro/", 0777);
+                    }
+
+                    $target = $tar . "/components/com_pagtesouro/";
+                    $link = getcwd()."/administrator/components/com_pagtesouro/";
+
+                    if(is_dir($link)){
+                           $diretorio = dir($link);
+                            while( $arquivo = $diretorio->read() ){
+                                if( !in_array($arquivo, Array('.','..') )){
+                                        if($arquivo === "pagtesouro.json" && !file_exists("{$target}{$arquivo}")){
+                                                @link("{$link}{$arquivo}", "{$target}{$arquivo}");
+                                        }
+                                }
+                            }
+                            $diretorio->close();
+                    }
+                }
+        } catch (Exception $e) {
+            //echo $e->getMessage();
+        }
+    }
     
     //faz conexão com servidor do PagTesouro e envia a chave de autorização via cabeçalho/header da requisição, bem como define POST como metodo de envio
     public function gerar($params){
@@ -34,6 +66,9 @@ class PagTesouro{
 		$url = implode('/',$url);
 
         $file_prm = $url . "/administrator/components/com_pagtesouro/pagtesouro.json";
+
+        if(!file_exists($file_prm))$file_prm = $url . "/components/com_pagtesouro/pagtesouro.json";
+        if(!file_exists($file_prm))die("Arquivo {$file_prm} não encontrado.");
         try {
 
             //aqui é incrementado os dados vindos do formulário e definido o Token de acordo com o Serviço escolhido
