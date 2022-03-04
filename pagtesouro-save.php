@@ -9,12 +9,15 @@
 # Modificação: 10 MAR 2021
 # Modificação: 17 MAR 2021
 # Modificação: 28 MAR 2021
+# Modificação: 05 MAR 2022
 *
 * This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
 */
+
+defined('_JEXEC') or die;
 
 $target = getcwd()."/pagtesouro.json";
 

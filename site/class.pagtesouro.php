@@ -15,6 +15,8 @@
 * other free or open source software licenses.
 */
 
+defined('_JEXEC') or die;
+
 class PagTesouro{
     //url de requisição <cnf doc>
     private static $urlRequest = "https://pagtesouro.tesouro.gov.br/api/gru/solicitacao-pagamento";

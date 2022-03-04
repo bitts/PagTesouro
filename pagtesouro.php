@@ -1,4 +1,3 @@
-
 <?php
 
 /*
@@ -9,6 +8,7 @@
 # version: 2.1
 # Modificação: 16 MAR 2021
 # Modificação: 28 MAR 2021
+# Modificação: 05 MAR 2022
 *
 * This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -50,7 +50,8 @@ try {
 
 	$document->addCustomTag($styles);
 
-	$document->addCustomTag("<script src='https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.1/marked.js'></script>");
+	//$document->addCustomTag("<script src='https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.1/marked.js'></script>");
+	$document->addCustomTag("<script src='". JUri::base() ."components/com_pagtesouro/marked.js'></script>");
 	$document->addCustomTag("<script src='". JUri::base() ."components/com_pagtesouro/jquery.gh-readme.min.js'></script>");
 	$document->addCustomTag("<script src='". JUri::base() ."components/com_pagtesouro/pagtesouro.js'></script>");
 	
