@@ -64,7 +64,7 @@ https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
     - Na interface administrativa aba para acompanhar atualizações do Componente do PagTesouro
 
     - Também na interface administrativa aba com conteudo do arquivo README.me mais atual direto do Github
-    
+- [05/03/2022] 2.2 - Correções para possível publicação no site [Extensions Directory](https://extensions.joomla.org/)
 
 # Primeiros passos antes da implementação
 [Passo a Passo - Material de Rafael Menezes](https://github.com/rafaelms87/pagtesouro/files/6236911/Passo.a.Passo.pdf)
