@@ -11,10 +11,10 @@
 	<description>PagTesouro Joomla!</description>
 	
 	<files folder="site">
-        <filename>call.php</filename>
-        <filename>class.pagtesouro.php</filename>
+		<filename>call.php</filename>
+		<filename>class.pagtesouro.php</filename>
 		<filename component="com_pagtesouro">pagtesouro.php</filename>
-        <filename>template.js</filename>
+        	<filename>template.js</filename>
 		<filename>template.php</filename>
 	</files>
 
@@ -27,11 +27,11 @@
 		<submenu>
 		</submenu>
 		<files folder="admin">
-            <filename>index.html</filename>
-            <filename>jquery.gh-readme.min.js</filename>
-            <filename>pagtesouro-save.php</filename>
-            <filename>pagtesouro.js</filename>
-            <filename>pagtesouro.json</filename>
+			<filename>index.html</filename>
+			<filename>jquery.gh-readme.min.js</filename>
+			<filename>pagtesouro-save.php</filename>
+			<filename>pagtesouro.js</filename>
+			<filename>pagtesouro.json</filename>
 			<filename component="com_pagtesouro">pagtesouro.php</filename>
 			<filename>pagtesouro.xml</filename>
 			<filename>manifest.xml</filename>			
