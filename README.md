@@ -38,6 +38,8 @@ Procure manter o projeto de forma que os clientes necessitem editar somente o ar
 ### Documentação de Referência
 https://valpagtesouro.tesouro.gov.br/simulador/#/pages/api
 
+https://pagtesouro.tesouro.gov.br/docs/api-psp/
+
 # Versions
 - [03/02/2021] 1.0 - Modificações básicas para funcionamento da API utilizando cURL do PHP, enviado os dados do formulário para classe PHP que trata os dados, inclui as chaves de autorização e URL para realizar as requisições ao PagTesouro.
 - [19/02/2021] 1.1 - Alterado sistema para funcionar com vários Tokens
