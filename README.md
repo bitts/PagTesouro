@@ -67,6 +67,7 @@ https://pagtesouro.tesouro.gov.br/docs/api-psp/
 
     - Também na interface administrativa aba com conteudo do arquivo README.me mais atual direto do Github
 - [05/03/2022] 2.2 - Correções para possível publicação no site [Extensions Directory](https://extensions.joomla.org/)
+- [15/03/2022] 2.2 - Publicação no site [Extensions Directory](https://extensions.joomla.org/extension/contacts-and-feedback/forms/formulario-de-integracao-pagtesouro/)
 
 # Primeiros passos antes da implementação
 [Passo a Passo - Material de Rafael Menezes](https://github.com/rafaelms87/pagtesouro/files/6236911/Passo.a.Passo.pdf)
@@ -133,6 +134,89 @@ Caso você utilize Joomla é quer colocar o conteudo deste formulário de forma 
 ]
 ```
 * Valide o seu arquivo JSON em https://jsonlint.com/
+
+# Em utilização por 
+
+- [CMA - Colégio Militar de Manaus](https://www.cmm.eb.mil.br/?option=com_pagtesouro)
+
+- [AMAN - Academia Militar das Agulhas Negras](http://www.aman.eb.mil.br/?option=com_pagtesouro)
+
+- [EsSLog - Escola de Sargentos de Logística](http://www.esslog.eb.mil.br/?option=com_pagtesouro)
+
+- [1º BIS - 1º Batalhão de Infantaria de Selva (Amv)](https://www.1bis.eb.mil.br/?option=com_pagtesouro)
+
+- [12º BSup - 12º Batalhão de Suprimento](https://www.12bsup.eb.mil.br/?option=com_pagtesouro)
+
+- [CCFEx - Centro de Capacitação Física do Exército](http://www.ccfex.eb.mil.br/?option=com_pagtesouro)
+
+- [CMA - Comando Militar da Amazônia](https://www.cma.eb.mil.br/?option=com_pagtesouro)
+
+- [EsAO - Escola de Aperfeiçoamento de Oficiais](http://www.esao.eb.mil.br/?option=com_pagtesouro)
+
+- [EsACosAAe - Escola de Artilharia de Costa e Antiaérea](http://www.esacosaae.eb.mil.br/?option=com_pagtesouro)
+
+- [CRO 12 - Comissão Regional de Obras da 12ª Região Militar](https://www.cro12.eb.mil.br/?option=com_pagtesouro)
+
+- [EsIE - Escola de Instrução Especializada](http://www.esie.eb.mil.br/?option=com_pagtesouro)
+
+- [2ª Bda Inf Sl - 2ª Brigada de Infantaria de Selva](https://www.2bdainfsl.eb.mil.br/?option=com_pagtesouro)
+
+- [CEP/FDC - Centro de Estudos de Pessoal e Forte Duque de Caxias](http://www.cep.eb.mil.br/?option=com_pagtesouro)
+
+- [IME - Instituto Militar de Engenharia](http://www.ime.eb.mil.br/?option=com_pagtesouro)
+
+- [CML - Comando Militar do Leste](http://www.cml.eb.mil.br/?option=com_pagtesouro)
+
+- [HCE - Hospital Central do Exército](http://www.hce.eb.mil.br/?option=com_pagtesouro)
+
+- [CMRJ - Colégio Militar do Rio de Janeiro](http://www.cmrj.eb.mil.br/?option=com_pagtesouro)
+
+- [CMM - Colégio Militar de Manaus](https://www.cmm.eb.mil.br/?option=com_pagtesouro)
+
+- [54º BIS - 54º Batalhão de Infantaria de Selva](https://www.54bis.eb.mil.br/?option=com_pagtesouro)
+
+- [16ª Bda Inf Sl - 16ª Brigada de Infantaria de Selva](https://www.16bdainfsl.eb.mil.br/?option=com_pagtesouro)
+
+- [HGuT - Hospital de Guarnição de Tabatinga](https://www.hgut.eb.mil.br/?option=com_pagtesouro)
+
+- [2ª RM - 2ª Região Militar](http://www.2rm.eb.mil.br/?option=com_pagtesouro)
+
+- [HGuPV - Hospital de Guarnição de Porto Velho](https://www.hgupv.eb.mil.br/?option=com_pagtesouro)
+
+- [36º BI Mec - 36º Batalhão de Infantaria Mecanizado.](http://www.36bimec.eb.mil.br/?option=com_pagtesouro)
+
+- [17ª Bda Inf Sl - Comando da 17ª Brigada de Infantaria de Selva](https://www.17bdainfsl.eb.mil.br/?option=com_pagtesouro)
+
+- [1° Esqd C L - 1° Esquadrão de Cavalaria Leve](http://www.1esqdcl.eb.mil.br/?option=com_pagtesouro)
+
+- [7º BEC - 7º Batalhão de Engenharia de Construção](https://www.7bec.eb.mil.br/?option=com_pagtesouro)
+
+- [8º BIS - 8º Batalhão de Infantaria de Selva](https://www.8bis.eb.mil.br/?option=com_pagtesouro)
+
+- [HMAM - Hospital Militar de Área de Manaus](https://www.hmam.eb.mil.br/?option=com_pagtesouro)
+
+- [47º BI - 47º Batalhão de Infantaria](https://www.47bi.eb.mil.br/?option=com_pagtesouro)
+
+- [6º BIS - 6º Batalhão de Infantaria de Selva](https://www.6bis.eb.mil.br/?option=com_pagtesouro)
+
+- [7° BIB - 7° Batalhão de Infantaria Blindado](http://www.7bib.eb.mil.br/?option=com_pagtesouro)
+
+- [4º BIS - 4º Batalhão de Infantaria de Selva](https://www.4bis.eb.mil.br/?option=com_pagtesouro)
+
+- [4º BAvEx - 4º Batalhão de Aviação do Exército](https://www.4bavex.eb.mil.br/pt/?option=com_pagtesouro)
+
+- [12ª RM - 12ª Região Militar](https://www.12rm.eb.mil.br/?option=com_pagtesouro)
+
+- [HGeRJ - Hospital Geral do Rio de Janeiro.](http://www.hgerj.eb.mil.br/?option=com_pagtesouro)
+
+[]()
+
+[]()
+
+[]()
+
+
+
 
 
 
