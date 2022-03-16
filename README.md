@@ -87,7 +87,7 @@ Aba PagTesouro / Catálago de serviços / Inserir o código da UG, código de re
 # Uso para sistema Joomla
 - Acessar painel administrativo do Joomla
 - Ir no Menu > Extesions > Manager > Install
-- Na opção "Upload Package File" você precisa fazer o download do arquivo da versão [2.0](https://github.com/bitts/PagTesouro/releases/download/v2.0/INSTALADOR.zip) para o seu computador e depois escolher o arquivo para instalação;
+- Na opção "Upload Package File" você precisa fazer o download do arquivo da versão [2.2](https://github.com/bitts/PagTesouro/archive/refs/tags/v2.2.zip) para o seu computador e depois escolher o arquivo para instalação;
 - Vá no Menu "Components" > "PagTesouro", para adicionar ou remover seus Tokens e Serviços
 - Em caso de dificuldades veja documentação do sistema ou a interpretação das [mensagens](https://github.com/bitts/PagTesouro/wiki/Erros-e-mensagens-do-Sistema-do-Sistema) do sistema
 
