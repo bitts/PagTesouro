@@ -50,7 +50,7 @@ https://pagtesouro.tesouro.gov.br/docs/api-psp/
 - [22/02/2021] 1.3 - [Validado] Funcional para diversos Token
 - [01/02/2021] 1.4 - [Validado] Sistema para hospedagem simples
 - [16/03/2021] 2.0 Funciona como componente do Joomla! 
-- [Veja Documentação de como Instalar no Joomla!](https://github.com/bitts/PagTesouro/wiki/Componente-Joomla)
+- [Veja Documentação de como Instalar no Joomla!](https://github.com/bitts/PagTesouro/wiki/Componente-Joomla---Inslata%C3%A7%C3%A3o)
 - [28/03/2021] 2.1 - Diversas melhoras:
 
     - Exportar cadastro realizado na interface Administrativa (backup do pagtesouro.json)
