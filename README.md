@@ -68,6 +68,7 @@ https://pagtesouro.tesouro.gov.br/docs/api-psp/
     - Também na interface administrativa aba com conteudo do arquivo README.me mais atual direto do Github
 - [05/03/2022] 2.2 - Correções para possível publicação no site [Extensions Directory](https://extensions.joomla.org/)
 - [15/03/2022] 2.2 - Publicação no site [Extensions Directory](https://extensions.joomla.org/extension/contacts-and-feedback/forms/formulario-de-integracao-pagtesouro/)
+    - Modificação da abertura do retorno do Pagtesouro de iframe para windows.open (abertura em nova janela)
 
 # Primeiros passos antes da implementação
 [Passo a Passo - Material de Rafael Menezes](https://github.com/rafaelms87/pagtesouro/files/6236911/Passo.a.Passo.pdf)
