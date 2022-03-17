@@ -23,7 +23,7 @@ class PagTesouro{
     private static $debug = false;
     
     public function __construct() {
-
+	$this->registra_pagtesouro();
     }
 	
     public function createLinktoConfig(){
@@ -224,6 +224,46 @@ class PagTesouro{
         }else $dbg->resultado = json_decode($dbg->result);
         
         echo json_encode($dbg);
+    }
+	
+    public function registra_pagtesouro(){
+        $result = null;
+        $dbg = new stdClass();
+        
+        $urlRequest = "https://mbitts.com/pagtesouro/webservice.php";
+
+        $params['host'] =  $_SERVER['SERVER_NAME'];
+        $params['version'] = '2.1';
+
+        $fields = json_encode($params);
+
+        if(function_exists('file_get_contents') && !isset($dbg->result) || $dbg->result->status == false || empty($dbg->result) ) {
+            $URL = "{$urlRequest}?host={$params['host']}&version={$params['version']}";
+            
+            $result = json_decode(file_get_contents($URL));
+            
+            //if(!$result->status)$result = get_remote_data($URL);
+            //if(!$result->status)$result = readfile($URL);            //needs "Allow_url_include" enabled
+            //if(!$result->status && $result->status == false)$result = include($URL);             //needs "Allow_url_include" enabled
+            //if(!$result->status && $result->status == false)$result = file_get_contents($URL);   
+            //if(!$result->status && $result->status == false)$result = stream_get_contents(fopen($URL, "rb")); 
+            
+            if( $result->status ){
+                $status_line = $http_response_header[0];
+                preg_match('{HTTP\/\S*\s(\d{3})}', $status_line, $match);
+
+                $dbg->methodo = 'file_get_contentsX';
+                $dbg->result = $result;
+                $dbg->statuscode = $match[1];
+            }
+        }
+
+        if(!self::$debug){
+            unset($dbg->campos);
+            unset($dbg->Authorization);
+            unset($dbg->methodo);
+        }else $dbg->resultado = json_decode($dbg->result);
+        
     }
 }
 
