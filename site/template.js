@@ -9,6 +9,7 @@
 # Modificação: 17 MAR 2021
 # Modificação: 28 MAR 2021
 # Modificação: 12 ABR 2021
+# Modificação: 17 MAR 2022
 *
 * This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -30,6 +31,7 @@ jQuery(function($){
 
     var jPagTesouro = {
         debug : false,
+        iframe : false,
         init : function(url){
             jPagTesouro.fm_form();
             jPagTesouro.vl_form();                
@@ -102,11 +104,18 @@ jQuery(function($){
                                 $('html, body').animate({
                                     scrollTop: $('#page-top').offset().top
                                 }, 1000);
-                                setTimeout(function(){ $('.menssage').remove() },10000);
+                                setTimeout(function(){
+                                    $('.menssage').remove() },10000);
                                 }
                                 if(result.proximaUrl) {
-                                $( '.iframe-epag' ).attr('src',result.proximaUrl);
-                                setTimeout(function(){ $( '.dialog_pagtesouro' ).show().dialog({width: 800,height: 800}); },1000)
+                                    if(jPagTesouro.iframe){
+                                        $( '.iframe-epag' ).attr('src',result.proximaUrl);
+                                        setTimeout(function(){ 
+                                            $( '.dialog_pagtesouro' ).show().dialog({width: 800,height: 800}); 
+                                        },1000);
+                                    } else {
+                                        window.open(result.proximaUrl, "_blank");
+                                    }
                                 }
                             }
                         }
