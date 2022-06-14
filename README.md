@@ -11,6 +11,24 @@ Formulário de integração com API do PagTesouro
 
 <p align="left"><a href="https://downloads.joomla.org" target="_blank" rel="noopener noreferrer"><img src="https://downloads.joomla.org/images/homepage/joomla-logo.png" alt="Joomla Logo"></a></p>
 
+# Necessita de Colaboradores!!!
+
+## Formulário de Integração com o PagTesouro
+
+### Acompanhamento do projeto
+- Interface Administrativa:
+    - [x] Cadastro de Tokens (Banco de Dados) 
+
+        Melhorias: atualmente sando dados no formato string com o JSON contendo os dados (mudar para tabelas específicas?) 
+    - [ ] Exibir dados cadastrados pelos usuário no formato padrão do Joomla de apresentação de listagens
+    - [ ] Exibir mensagem de atualizações com base no GitHub e versão publicada
+    - [ ] Personalização do CSS do formulário atráves da interface administrativa em nova aba de apresentação de opções
+
+        Obs.: Verificar editores de css possíveis de integração e compatíveis com Joomla
+
+- Interface Usuário:
+    - [ ] Salvar dados submetidos no formulário em banco de dados
+    - [ ] Consultar documento
 
 ## Créditos
 
