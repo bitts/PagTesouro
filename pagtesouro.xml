@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>PagTesouro</name>
+	<author>Marcelo Valvassori Bittencourt</author>
+	<creationDate>28/03/2021</creationDate>
+	<copyright>Copyright (C) 2017 - 2021 Open Source Matters, Inc. All rights reserved.</copyright>
+	<authorEmail>marcelo.valvassori.bittencourt@gmail.om</authorEmail>
+	<authorUrl>https://github.com/bitts/</authorUrl>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<version>2.2.0</version>
+	<description><![CDATA[
+		<h1>PagTesouro for Joomla! (v.2.2.0)[03/2022]</h1>
+		<div style="clear: both;"></div>
+		<p>PagTesouro form to [Joomla!](http://www.joomla.org) Component ability.</p>
+		<p>Created by <a href="https://github.com/bitts" target="_blank">Marcelo Valvassori Bittencourt</a><br />
+		<small>Development started 28th March, 2021</small>
+		</p>
+	]]></description>
+
+	<install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+	
+	<files folder="site">
+        <filename>call.php</filename>
+        <filename>class.pagtesouro.php</filename>
+		<filename component="com_pagtesouro">pagtesouro.php</filename>
+		<filename>index.html</filename>
+		<filename>pagtesouro.php</filename>
+        <filename>template.js</filename>
+		<filename>template.php</filename>
+	</files>
+
+	<updateservers>
+		<server type="extension" name="PagTesouro Update Site">https://raw.githubusercontent.com/bitts/PagTesouro/main/manifest.xml</server>
+	</updateservers>
+	
+	<administration>
+		<menu alt="COM_PAGTESOURO" link="option=com_pagtesouro">PagTesouro</menu>
+		<submenu>
+		</submenu>
+		<files folder="admin">
+			<folder>sql</folder>  
+			<filename>index.html</filename>          
+            <filename>jquery.gh-readme.min.js</filename>
+			<filename>manifest.xml</filename>            
+			<filename>marked.js</filename>
+			<filename>pagtesouro-save.php</filename>
+            <filename>pagtesouro.js</filename>
+            <filename>pagtesouro.json</filename>
+			<filename component="com_pagtesouro">pagtesouro.php</filename>
+		</files>
+	</administration>
+</extension>
