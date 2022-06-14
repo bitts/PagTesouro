@@ -19,7 +19,7 @@ Formulário de integração com API do PagTesouro
 - Interface Administrativa:
     - [x] Cadastro de Tokens (Banco de Dados) 
 
-        Melhorias: atualmente sando dados no formato string com o JSON contendo os dados (mudar para tabelas específicas?) 
+        Melhorias: atualmente salvando dados no formato string, com o JSON contendo os dados cadastrados (mudar para tabelas específicas?) 
     - [ ] Exibir dados cadastrados pelos usuário no formato padrão do Joomla de apresentação de listagens
     - [ ] Exibir mensagem de atualizações com base no GitHub e versão publicada
     - [ ] Personalização do CSS do formulário atráves da interface administrativa em nova aba de apresentação de opções
