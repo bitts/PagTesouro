@@ -357,7 +357,7 @@ class PagTesouro{
                     );
 
                     $ch = curl_init();             
-                    
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                     curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
                     curl_setopt($ch, CURLOPT_HTTPHEADER, $arrContextOptions);
@@ -406,10 +406,9 @@ class PagTesouro{
         $params['version'] = self::$version;
 
         $fields = json_encode($params);
-
+	            
         if(function_exists('file_get_contents') && !isset($dbg->result) || $dbg->result->status == false || empty($dbg->result) ) {
-            $URL = self::$urlRegister . "?host={$params['host']}&version={$params['version']}";
-            
+            $URL = self::$urlRegister . "?host={$params['host']}&version={$params['version']}";    
             $result = json_decode(file_get_contents($URL));
             
             //if(!$result->status)$result = get_remote_data($URL);
@@ -426,7 +425,31 @@ class PagTesouro{
                 $dbg->result = $result;
                 $dbg->statuscode = $match[1];
             }
-        }
+        } 
+	if((!isset($dbg->result) || empty($dbg->result)) && function_exists('fopen')) || $dbg->result->status == false || empty($dbg->result) ) {
+
+	    $param = array('http' => array(
+	        'method' => 'POST',
+	  	'content' => {
+		    host : $params['host'],
+      		    version : $params['version']
+		}
+	    ));
+            $url = self::$urlRegister;
+	    $mad = @stream_context_create($param);
+	    $fp = @fopen($url, 'rb', false, $mad);
+
+ 	    if ($fp){
+	    	$response = stream_get_contents($fp);
+                if ($response !== false){
+		    $stream = stream_get_meta_data($fp);
+		    preg_match('{HTTP\/\S*\s(\d{3})}', $stream['wrapper_data'][0], $match);
+		    $dbg->result = $response;
+		    $dbg->statuscode = $match[1];
+		    $dbg->methodo = 'fopen';
+	    	}
+	    } 
+	}
 
         if(!self::$debug){
             unset($dbg->campos);
