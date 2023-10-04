@@ -5,7 +5,7 @@
         <description><![CDATA[Component PagTesouro will check your extension files and will let you know in advance if there are any possible problems with your extension for submitting to the form data.]]></description>
         <element>com_PagTesouro</element>
         <type>component</type>
-        <version>2.2</version>
+        <version>3.0</version>
         <client>administrator</client>
         <infourl title="PagTesouro Extension">https://github.com/bitts/PagTesouro/releases/tag/v2.2</infourl>
         <downloads>
