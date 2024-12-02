@@ -228,7 +228,9 @@ Caso você utilize Joomla é quer colocar o conteudo deste formulário de forma 
 
 - [12ª RM - 12ª Região Militar](https://www.12rm.eb.mil.br/?option=com_pagtesouro)
 
-- [HGeRJ - Hospital Geral do Rio de Janeiro.](http://www.hgerj.eb.mil.br/?option=com_pagtesouro)
+- [HGeRJ - Hospital Geral do Rio de Janeiro](http://www.hgerj.eb.mil.br/?option=com_pagtesouro)
+
+- [PMZS - Prefeitura Militar da Zona Sul](https://www.pmzs.eb.mil.br/?option=com_pagtesouro)
 
 []()
 
